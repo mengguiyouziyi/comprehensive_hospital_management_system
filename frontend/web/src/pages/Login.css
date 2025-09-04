@@ -1,0 +1,27 @@
+.login-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1890ff, #0050b3);
+}
+
+.login-card {
+  width: 100%;
+  max-width: 400px;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.login-form {
+  max-width: 300px;
+  margin: 0 auto;
+}
+
+.login-form-button {
+  width: 100%;
+}
+
+.site-form-item-icon {
+  color: rgba(0, 0, 0, 0.25);
+}
