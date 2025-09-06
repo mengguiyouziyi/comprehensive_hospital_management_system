@@ -1,0 +1,356 @@
+/* 整体布局 */
+.dashboard-layout {
+  min-height: 100vh;
+  background: #f0f2f5;
+}
+
+/* 侧边栏样式 */
+.dashboard-sider {
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.1);
+  z-index: 100;
+  overflow-y: auto;
+  overflow-x: hidden;
+  height: 100vh;
+  position: fixed;
+  left: 0;
+  top: 0;
+}
+
+.dashboard-sider .logo {
+  height: 56px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 12px;
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  overflow: hidden;
+  transition: all 0.3s;
+}
+
+.dashboard-sider .logo-icon {
+  font-size: 24px;
+  color: white;
+  margin-right: 8px;
+}
+
+.dashboard-sider .logo-text {
+  color: white;
+  font-size: 16px;
+  font-weight: 600;
+  white-space: nowrap;
+  opacity: 1;
+  transition: opacity 0.3s;
+}
+
+.dashboard-sider.ant-layout-sider-collapsed .logo-text {
+  opacity: 0;
+  width: 0;
+}
+
+.dashboard-sider.ant-layout-sider-collapsed + .main-layout {
+  margin-left: 80px;
+}
+
+.dashboard-sider .ant-menu {
+  border-right: none;
+}
+
+.dashboard-sider .ant-menu-item {
+  border-radius: 0;
+  margin: 4px 8px;
+  height: 48px;
+  line-height: 48px;
+  transition: all 0.3s;
+}
+
+.dashboard-sider .ant-menu-item:hover {
+  background: rgba(255, 255, 255, 0.1);
+  transform: translateX(4px);
+}
+
+.dashboard-sider .ant-menu-item-selected {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border-radius: 8px;
+  color: white;
+}
+
+.dashboard-sider .ant-menu-item-selected::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 4px;
+  height: 24px;
+  background: white;
+  border-radius: 0 2px 2px 0;
+}
+
+/* 主布局区域 */
+.main-layout {
+  min-height: 100vh;
+  overflow: hidden;
+  margin-left: 240px;
+  transition: margin-left 0.3s;
+}
+
+/* 顶部导航栏 */
+.dashboard-header {
+  background: white;
+  padding: 0 16px;
+  box-shadow: 0 1px 4px rgba(0, 21, 41, 0.08);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 56px;
+  position: sticky;
+  top: 0;
+  z-index: 99;
+  backdrop-filter: blur(8px);
+  background: rgba(255, 255, 255, 0.95);
+}
+
+.header-left {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.trigger-btn {
+  font-size: 18px;
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.trigger-btn:hover {
+  background: #f0f2f5;
+  color: #1890ff;
+}
+
+.breadcrumb {
+  font-size: 14px;
+}
+
+.breadcrumb .ant-breadcrumb-link {
+  color: #666;
+}
+
+.breadcrumb .ant-breadcrumb-link:last-child {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+.header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.notification-badge .ant-badge-count {
+  background: #ff4d4f;
+  box-shadow: 0 2px 4px rgba(255, 77, 79, 0.3);
+}
+
+.notification-btn {
+  width: 40px;
+  height: 40px;
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+}
+
+.notification-btn:hover {
+  background: #f0f2f5;
+  color: #1890ff;
+}
+
+.user-dropdown {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  padding: 8px 12px;
+  border-radius: 8px;
+  cursor: pointer;
+  transition: all 0.3s;
+  border: 1px solid transparent;
+}
+
+.user-dropdown:hover {
+  background: #f0f2f5;
+  border-color: #d9d9d9;
+}
+
+.username {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.dropdown-arrow {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+/* 内容区域 */
+.dashboard-content {
+  padding: 8px;
+  height: calc(100vh - 56px);
+  background: #f0f2f5;
+  overflow-y: auto;
+  overflow-x: hidden;
+}
+
+.content-wrapper {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+  min-height: calc(100% - 16px);
+  padding: 16px;
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.content-wrapper:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .dashboard-sider {
+    transform: translateX(-100%);
+    transition: transform 0.3s;
+  }
+  
+  .dashboard-sider.ant-layout-sider-collapsed {
+    transform: translateX(-100%);
+  }
+  
+  .dashboard-sider:not(.ant-layout-sider-collapsed) {
+    transform: translateX(0);
+  }
+  
+  .main-layout {
+    margin-left: 0 !important;
+  }
+  
+  .dashboard-header {
+    padding: 0 16px;
+  }
+  
+  .breadcrumb {
+    display: none;
+  }
+  
+  .username {
+    display: none;
+  }
+  
+  .dashboard-content {
+    padding: 12px;
+  }
+  
+  .content-wrapper {
+    padding: 16px;
+    border-radius: 8px;
+  }
+}
+
+@media (max-width: 480px) {
+  .dashboard-content {
+    padding: 8px;
+  }
+  
+  .content-wrapper {
+    padding: 12px;
+    border-radius: 8px;
+  }
+  
+  .header-right {
+    gap: 8px;
+  }
+  
+  .notification-badge {
+    display: none;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.content-wrapper {
+  animation: slideIn 0.3s ease-out;
+}
+
+/* 滚动条美化 */
+.dashboard-content::-webkit-scrollbar {
+  width: 6px;
+}
+
+.dashboard-content::-webkit-scrollbar-track {
+  background: #f0f2f5;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.dashboard-content::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 通知菜单样式 */
+.notification-menu {
+  width: 320px;
+  max-height: 400px;
+  overflow-y: auto;
+}
+
+.notification-menu .ant-menu-item {
+  padding: 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.notification-menu .ant-menu-item:hover {
+  background: #f0f9ff;
+}
+
+.notification-menu .ant-menu-item-disabled {
+  background: #fafafa;
+  cursor: default;
+}
+
+.notification-menu .ant-menu-item-disabled:hover {
+  background: #fafafa;
+}
+
+.notification-badge .ant-badge-count {
+  background: #ff4d4f;
+  box-shadow: 0 2px 4px rgba(255, 77, 79, 0.3);
+}
+
+.notification-btn:hover {
+  background: #f0f2f5;
+  color: #1890ff;
+  transform: scale(1.05);
+}
+
+.notification-btn:active {
+  transform: scale(0.95);
+}
