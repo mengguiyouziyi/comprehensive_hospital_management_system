@@ -1,24 +1,81 @@
-const dotenv = require('dotenv');
+// 环境配置
+const env = process.env.NODE_ENV || 'development';
 
-dotenv.config();
-
-module.exports = {
-  port: process.env.PORT || 3001,
-  // 更新MongoDB连接URL以指向远程服务器
-  mongoUri: process.env.MONGO_URI || 'mongodb://192.168.1.246:27017/hospital_management',
-  jwtSecret: process.env.JWT_SECRET || 'hospital_management_secret_key',
-  // 添加Redis配置
-  redis: {
-    host: process.env.REDIS_HOST || '192.168.1.246',
-    port: process.env.REDIS_PORT || 6379,
-    password: process.env.REDIS_PASSWORD || null
+const config = {
+  development: {
+    port: process.env.PORT || 4000,
+    database: {
+      mongodb: {
+        uri: process.env.MONGODB_URI || 'mongodb://192.168.1.246:27017/hospital_dev'
+      },
+      redis: {
+        host: process.env.REDIS_HOST || '192.168.1.246',
+        port: process.env.REDIS_PORT || 6379,
+        password: process.env.REDIS_PASSWORD || ''
+      },
+      mysql: {
+        host: process.env.MYSQL_HOST || '192.168.1.246',
+        port: process.env.MYSQL_PORT || 3306,
+        username: process.env.MYSQL_USERNAME || 'root',
+        password: process.env.MYSQL_PASSWORD || 'root',
+        database: process.env.MYSQL_DATABASE || 'hospital_dev'
+      }
+    },
+    jwt: {
+      secret: process.env.JWT_SECRET || 'hospital-management-secret-key',
+      expiresIn: process.env.JWT_EXPIRES_IN || '24h'
+    }
   },
-  // 添加MySQL配置
-  mysql: {
-    host: process.env.MYSQL_HOST || '192.168.1.246',
-    port: process.env.MYSQL_PORT || 3306,
-    user: process.env.MYSQL_USER || 'root',
-    password: process.env.MYSQL_PASSWORD || 'root',
-    database: process.env.MYSQL_DATABASE || 'hospital_management'
+  
+  production: {
+    port: process.env.PORT || 4000,
+    database: {
+      mongodb: {
+        uri: process.env.MONGODB_URI || 'mongodb://192.168.1.246:27017/hospital'
+      },
+      redis: {
+        host: process.env.REDIS_HOST || '192.168.1.246',
+        port: process.env.REDIS_PORT || 6379,
+        password: process.env.REDIS_PASSWORD || ''
+      },
+      mysql: {
+        host: process.env.MYSQL_HOST || '192.168.1.246',
+        port: process.env.MYSQL_PORT || 3306,
+        username: process.env.MYSQL_USERNAME || 'root',
+        password: process.env.MYSQL_PASSWORD || 'root',
+        database: process.env.MYSQL_DATABASE || 'hospital'
+      }
+    },
+    jwt: {
+      secret: process.env.JWT_SECRET || 'hospital-management-secret-key',
+      expiresIn: process.env.JWT_EXPIRES_IN || '24h'
+    }
+  },
+  
+  test: {
+    port: process.env.PORT || 4000,
+    database: {
+      mongodb: {
+        uri: process.env.MONGODB_URI || 'mongodb://192.168.1.246:27017/hospital_test'
+      },
+      redis: {
+        host: process.env.REDIS_HOST || '192.168.1.246',
+        port: process.env.REDIS_PORT || 6379,
+        password: process.env.REDIS_PASSWORD || ''
+      },
+      mysql: {
+        host: process.env.MYSQL_HOST || '192.168.1.246',
+        port: process.env.MYSQL_PORT || 3306,
+        username: process.env.MYSQL_USERNAME || 'root',
+        password: process.env.MYSQL_PASSWORD || 'root',
+        database: process.env.MYSQL_DATABASE || 'hospital_test'
+      }
+    },
+    jwt: {
+      secret: process.env.JWT_SECRET || 'hospital-management-test-secret-key',
+      expiresIn: process.env.JWT_EXPIRES_IN || '1h'
+    }
   }
 };
+
+module.exports = config[env];

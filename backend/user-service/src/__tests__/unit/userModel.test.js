@@ -1,14 +1,22 @@
 const mongoose = require('mongoose');
 const User = require('../../models/User');
+const Role = require('../../models/Role');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 
 let mongoServer;
+let testRole;
 
 // 测试前连接内存数据库
 beforeAll(async () => {
   mongoServer = await MongoMemoryServer.create();
   const mongoUri = mongoServer.getUri();
   await mongoose.connect(mongoUri);
+  
+  // 创建测试角色
+  testRole = await Role.create({
+    name: 'user',
+    description: '普通用户'
+  });
 });
 
 // 测试后断开连接并清理
@@ -16,7 +24,7 @@ afterAll(async () => {
   await mongoose.connection.dropDatabase();
   await mongoose.connection.close();
   await mongoServer.stop();
-});
+}, 10000); // 增加超时时间
 
 // 每个测试前清理数据
 beforeEach(async () => {
@@ -30,7 +38,8 @@ describe('User Model', () => {
         username: 'testuser',
         email: 'test@example.com',
         password: 'password123',
-        fullName: 'Test User'
+        fullName: 'Test User',
+        roleId: testRole._id
       };
 
       const user = new User(userData);
@@ -61,14 +70,16 @@ describe('User Model', () => {
         username: 'testuser',
         email: 'test1@example.com',
         password: 'password123',
-        fullName: 'Test User 1'
+        fullName: 'Test User 1',
+        roleId: testRole._id
       };
 
       const userData2 = {
         username: 'testuser', // 重复用户名
         email: 'test2@example.com',
         password: 'password123',
-        fullName: 'Test User 2'
+        fullName: 'Test User 2',
+        roleId: testRole._id
       };
 
       await new User(userData1).save();
@@ -84,7 +95,8 @@ describe('User Model', () => {
         username: 'testuser',
         email: 'test@example.com',
         password: 'password123',
-        fullName: 'Test User'
+        fullName: 'Test User',
+        roleId: testRole._id
       };
 
       const user = new User(userData);
@@ -99,7 +111,8 @@ describe('User Model', () => {
         username: 'testuser',
         email: 'test@example.com',
         password: 'password123',
-        fullName: 'Test User'
+        fullName: 'Test User',
+        roleId: testRole._id
       };
 
       const user = new User(userData);
@@ -119,7 +132,8 @@ describe('User Model', () => {
         username: 'testuser',
         email: 'test@example.com',
         password: 'password123',
-        fullName: 'Test User'
+        fullName: 'Test User',
+        roleId: testRole._id
       };
 
       const user = new User(userData);

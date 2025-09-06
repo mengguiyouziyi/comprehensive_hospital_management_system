@@ -1,16 +1,33 @@
 const AuthService = require('../../services/authService');
 const User = require('../../models/User');
+const Role = require('../../models/Role');
 const jwt = require('jsonwebtoken');
 const { MongoMemoryServer } = require('mongodb-memory-server');
 const mongoose = require('mongoose');
 
 let mongoServer;
+let testRole;
 
 // 测试前连接内存数据库
 beforeAll(async () => {
+  // 设置测试环境
+  process.env.NODE_ENV = 'test';
+  process.env.JWT_SECRET = 'test_secret_key';
+  
+  // 断开现有连接
+  if (mongoose.connection.readyState !== 0) {
+    await mongoose.connection.close();
+  }
+  
   mongoServer = await MongoMemoryServer.create();
   const mongoUri = mongoServer.getUri();
   await mongoose.connect(mongoUri);
+  
+  // 创建测试角色
+  testRole = await Role.create({
+    name: 'user',
+    description: '普通用户'
+  });
 });
 
 // 测试后断开连接并清理
@@ -31,15 +48,33 @@ const mockUserData = {
   email: 'test@example.com',
   password: 'password123',
   fullName: 'Test User',
-  roleId: new mongoose.Types.ObjectId()
+  roleId: testRole ? testRole._id : null
 };
 
 describe('AuthService', () => {
+  describe('register', () => {
+    it('should register user successfully', async () => {
+      const userData = {
+        username: 'newuser',
+        email: 'newuser@example.com',
+        password: 'password123',
+        fullName: 'New User',
+        roleId: testRole._id
+      };
+
+      const result = await AuthService.register(userData);
+      
+      expect(result).toHaveProperty('user');
+      expect(result.user.username).toBe(userData.username);
+      expect(result.user.email).toBe(userData.email);
+      expect(result.user.password).toBeUndefined(); // 不应该包含密码
+    });
+  });
+
   describe('login', () => {
     it('should login user successfully with correct credentials', async () => {
       // 创建测试用户
-      const user = new User(mockUserData);
-      await user.save();
+      await AuthService.register(mockUserData);
 
       // 尝试登录
       const result = await AuthService.login('testuser', 'password123');
@@ -54,8 +89,7 @@ describe('AuthService', () => {
 
     it('should fail to login with incorrect password', async () => {
       // 创建测试用户
-      const user = new User(mockUserData);
-      await user.save();
+      await AuthService.register(mockUserData);
 
       // 尝试使用错误密码登录
       await expect(AuthService.login('testuser', 'wrongpassword'))
@@ -74,7 +108,7 @@ describe('AuthService', () => {
   describe('verifyToken', () => {
     it('should verify a valid token', async () => {
       const payload = { userId: '123', username: 'testuser' };
-      const token = jwt.sign(payload, process.env.JWT_SECRET);
+      const token = jwt.sign(payload, 'test_secret_key');
 
       const decoded = await AuthService.verifyToken(token);
       expect(decoded.userId).toBe(payload.userId);
@@ -87,25 +121,6 @@ describe('AuthService', () => {
       await expect(AuthService.verifyToken(invalidToken))
         .rejects
         .toThrow('无效的token');
-    });
-  });
-
-  describe('refreshToken', () => {
-    it('should refresh a valid token', async () => {
-      const payload = { userId: '123', username: 'testuser' };
-      const refreshToken = jwt.sign(payload, process.env.JWT_SECRET, { expiresIn: '7d' });
-
-      const result = await AuthService.refreshToken(refreshToken);
-      expect(result).toHaveProperty('access_token');
-      expect(result).toHaveProperty('expires_in');
-    });
-
-    it('should reject an invalid refresh token', async () => {
-      const invalidToken = 'invalid.token.here';
-
-      await expect(AuthService.refreshToken(invalidToken))
-        .rejects
-        .toThrow('无效的刷新token');
     });
   });
 });

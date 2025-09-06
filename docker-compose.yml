@@ -49,9 +49,10 @@ services:
     container_name: hospital_user_service
     restart: always
     ports:
-      - "3001:3001"
+      - "4000:4000"  # 修改端口映射为4000:4000
     environment:
       - NODE_ENV=production
+      - PORT=4000  # 添加端口环境变量
       - MONGODB_URI=mongodb://root:rootpassword@mongodb:27017/hospital_management?authSource=admin
       - REDIS_URL=redis://redis:6379
       - JWT_SECRET=your-super-secret-jwt-key-here
@@ -69,7 +70,7 @@ services:
     container_name: hospital_web
     restart: always
     ports:
-      - "80:80"
+      - "5000:80"  # 修改端口映射为5000:80
     depends_on:
       - user-service
     networks:

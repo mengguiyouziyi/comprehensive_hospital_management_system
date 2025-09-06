@@ -1,16 +1,56 @@
 const Equipment = require('../models/Equipment');
 const Department = require('../models/Department');
+const User = require('../models/User');
 
 class EquipmentService {
   /**
    * 创建新设备
    * @param {Object} equipmentData - 设备数据
+   * @param {string} userId - 创建用户ID
    * @returns {Promise<Object>} 创建的设备对象
    */
-  async createEquipment(equipmentData) {
+  async createEquipment(equipmentData, userId) {
     try {
-      const equipment = new Equipment(equipmentData);
+      // 检查设备编号是否已存在
+      const existingEquipment = await Equipment.findOne({ 
+        equipmentId: equipmentData.equipmentId 
+      });
+      
+      if (existingEquipment) {
+        throw new Error('设备编号已存在');
+      }
+
+      // 检查科室是否存在
+      if (equipmentData.department) {
+        const department = await Department.findById(equipmentData.department);
+        if (!department) {
+          throw new Error('指定的科室不存在');
+        }
+      }
+
+      // 检查负责人是否存在
+      if (equipmentData.responsiblePerson) {
+        const user = await User.findById(equipmentData.responsiblePerson);
+        if (!user) {
+          throw new Error('指定的负责人不存在');
+        }
+      }
+
+      const equipment = new Equipment({
+        ...equipmentData,
+        createdBy: userId,
+        updatedBy: userId
+      });
+
       await equipment.save();
+      
+      // 填充关联数据
+      await equipment.populate([
+        { path: 'department', select: 'name code' },
+        { path: 'responsiblePerson', select: 'username fullName' },
+        { path: 'createdBy', select: 'username fullName' }
+      ]);
+
       return equipment;
     } catch (error) {
       throw new Error(`创建设备失败: ${error.message}`);
