@@ -1,0 +1,778 @@
+/* 安全管理页面样式 */
+.safety-management {
+  min-height: 100%;
+}
+
+/* 页面标题区域 */
+.safety-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.safety-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.safety-header .page-icon {
+  font-size: 28px;
+  color: #1890ff;
+}
+
+/* 统计卡片区域 */
+.safety-stats {
+  margin-bottom: 24px;
+}
+
+.stats-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stats-card .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stats-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 主要内容区域 */
+.safety-content {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.tab-content {
+  padding: 16px 0;
+}
+
+/* 筛选区域 */
+.filter-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+/* 表格样式 */
+.safety-content .ant-table {
+  border-radius: 8px;
+}
+
+.safety-content .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.safety-content .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.safety-content .ant-table-tbody > tr > td {
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* 特殊行样式 */
+.safety-content .ant-table-tbody > tr.error-row {
+  background: #fff2f0 !important;
+}
+
+.safety-content .ant-table-tbody > tr.error-row:hover > td {
+  background: #ffece8 !important;
+}
+
+.safety-content .ant-table-tbody > tr.warning-row {
+  background: #fff7e6 !important;
+}
+
+.safety-content .ant-table-tbody > tr.warning-row:hover > td {
+  background: #fff1e0 !important;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-green {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  color: #52c41a;
+}
+
+.ant-tag-blue {
+  background: #f0f9ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+.ant-tag-orange {
+  background: #fff7e6;
+  border-color: #ffd591;
+  color: #fa8c16;
+}
+
+.ant-tag-purple {
+  background: #f9f0ff;
+  border-color: #d3adf7;
+  color: #722ed1;
+}
+
+.ant-tag-volcano {
+  background: #fff2e8;
+  border-color: #ffbb96;
+  color: #fa541c;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 弹窗样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal .ant-modal-footer {
+  border-top: 1px solid #f0f0f0;
+  border-radius: 0 0 12px 12px;
+}
+
+/* 描述列表样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  border-color: #f0f0f0;
+  color: #666;
+}
+
+/* 警告提示样式 */
+.ant-alert {
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.ant-alert-info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.ant-alert-warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.ant-alert-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.ant-alert-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+
+/* 卡片样式 */
+.ant-card {
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-card-head-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.ant-card-body {
+  padding: 16px;
+}
+
+/* 列表样式 */
+.ant-list-item {
+  padding: 12px 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-list-item:last-child {
+  border-bottom: none;
+}
+
+.ant-list-item-meta {
+  align-items: center;
+}
+
+.ant-list-item-meta-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+  margin-bottom: 4px;
+}
+
+.ant-list-item-meta-description {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 标签页样式 */
+.ant-tabs-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+  background: #1890ff;
+}
+
+/* 搜索框样式 */
+.ant-input-search {
+  border-radius: 8px;
+}
+
+.ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.ant-select {
+  border-radius: 8px;
+}
+
+.ant-select-selector {
+  border-radius: 8px !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 日期选择器样式 */
+.ant-picker {
+  border-radius: 8px;
+}
+
+.ant-picker:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ant-picker-range {
+  width: 100%;
+}
+
+/* 按钮样式 */
+.ant-btn {
+  border-radius: 8px;
+  font-weight: 500;
+}
+
+.ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 进度条样式 */
+.ant-progress {
+  border-radius: 8px;
+}
+
+.ant-progress-bg {
+  border-radius: 8px;
+}
+
+/* 安全管理特有样式 */
+.safety-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.safety-status.investigating {
+  background: #f0f9ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.safety-status.resolved {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.safety-status.monitoring {
+  background: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.safety-status.pending {
+  background: #f0f0f0;
+  color: #666;
+  border: 1px solid #d9d9d9;
+}
+
+/* 严重程度样式 */
+.severity-high {
+  color: #ff4d4f;
+  font-weight: 600;
+}
+
+.severity-medium {
+  color: #fa8c16;
+  font-weight: 600;
+}
+
+.severity-low {
+  color: #52c41a;
+  font-weight: 600;
+}
+
+/* 安全事件类型图标样式 */
+.safety-type-icon {
+  margin-right: 8px;
+  font-size: 16px;
+}
+
+.safety-type-icon.equipment {
+  color: #1890ff;
+}
+
+.safety-type-icon.patient {
+  color: #52c41a;
+}
+
+.safety-type-icon.medication {
+  color: #ff4d4f;
+}
+
+.safety-type-icon.fire {
+  color: #fa8c16;
+}
+
+.safety-type-icon.privacy {
+  color: #722ed1;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .safety-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .safety-header .page-title {
+    font-size: 20px;
+  }
+
+  .safety-stats {
+    margin-bottom: 16px;
+  }
+
+  .stats-card {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .safety-header {
+    padding: 16px;
+  }
+
+  .safety-header .page-title {
+    font-size: 18px;
+  }
+
+  .safety-header .page-icon {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-content {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-title {
+    font-size: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+.stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stats-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stats-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* 自定义滚动条 */
+.safety-content ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.safety-content ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.safety-content ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.safety-content ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 焦点状态样式 */
+.ant-input:focus,
+.ant-picker:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 禁用状态样式 */
+.ant-input:disabled,
+.ant-picker:disabled,
+.ant-select-disabled .ant-select-selector {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 只读状态样式 */
+.ant-input[readonly] {
+  background: #fafafa;
+  color: #666;
+  cursor: default;
+}
+
+/* 安全事件状态指示器 */
+.safety-status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  font-size: 12px;
+  font-weight: 500;
+}
+
+.safety-status-indicator.investigating {
+  background: #f0f9ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.safety-status-indicator.resolved {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+.safety-status-indicator.monitoring {
+  background: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.safety-status-indicator.pending {
+  background: #f0f0f0;
+  color: #666;
+  border: 1px solid #d9d9d9;
+}
+
+/* 预警卡片样式 */
+.alert-card {
+  border-left: 4px solid #ff4d4f;
+  background: #fff2f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+}
+
+.alert-card.warning {
+  border-left-color: #fa8c16;
+  background: #fff7e6;
+}
+
+.alert-card.info {
+  border-left-color: #1890ff;
+  background: #f0f9ff;
+}
+
+.alert-card .alert-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 4px;
+}
+
+.alert-card .alert-description {
+  font-size: 12px;
+  color: #666;
+  line-height: 1.5;
+}
+
+/* 安全事件表单样式 */
+.safety-form {
+  padding: 16px;
+  background: white;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.safety-form .form-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.safety-form .form-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 风险评估样式 */
+.risk-assessment {
+  padding: 16px;
+  border-radius: 8px;
+  margin-bottom: 16px;
+  border: 1px solid #f0f0f0;
+}
+
+.risk-assessment.high {
+  border-left: 4px solid #ff4d4f;
+}
+
+.risk-assessment.medium {
+  border-left: 4px solid #fa8c16;
+}
+
+.risk-assessment.low {
+  border-left: 4px solid #52c41a;
+}
+
+.risk-assessment .assessment-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 12px;
+}
+
+.risk-assessment .assessment-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.risk-assessment .assessment-risk {
+  font-size: 14px;
+  font-weight: 500;
+  padding: 2px 8px;
+  border-radius: 4px;
+}
+
+.risk-assessment .assessment-content {
+  font-size: 14px;
+  color: #666;
+  line-height: 1.6;
+}
+
+/* 打印样式 */
+@media print {
+  .safety-header,
+  .safety-stats,
+  .filter-section,
+  .ant-tabs-nav,
+  .ant-btn {
+    display: none !important;
+  }
+  
+  .safety-content {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .ant-table {
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* 实时更新指示器 */
+.real-time-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 4px 8px;
+  border-radius: 12px;
+  background: #f6ffed;
+  color: #52c41a;
+  font-size: 12px;
+  font-weight: 500;
+  border: 1px solid #b7eb8f;
+}
+
+.real-time-indicator .indicator-dot {
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #52c41a;
+  animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+  0% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+/* 响应式表格 */
+@media (max-width: 576px) {
+  .safety-content .ant-table {
+    font-size: 12px;
+  }
+  
+  .safety-content .ant-table-thead > tr > th {
+    padding: 8px 4px;
+  }
+  
+  .safety-content .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+  }
+  
+  .ant-btn-sm {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}

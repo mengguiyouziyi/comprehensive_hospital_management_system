@@ -1,0 +1,708 @@
+/* 患者管理样式 */
+.patient-management {
+  padding: 24px;
+  background: #f5f5f5;
+  min-height: 100vh;
+}
+
+.patient-header {
+  margin-bottom: 32px;
+  text-align: center;
+}
+
+.patient-header h3 {
+  margin-bottom: 8px;
+  color: #262626;
+}
+
+/* 统计卡片 */
+.stats-section {
+  margin-bottom: 32px;
+}
+
+.stats-section .ant-card {
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.stats-section .ant-card:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* 表格区域 */
+.table-section {
+  margin-bottom: 32px;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.table-header .ant-space {
+  flex: 1;
+  min-width: 0;
+}
+
+.table-header .ant-btn {
+  white-space: nowrap;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .patient-management {
+    padding: 16px;
+  }
+  
+  .patient-header {
+    margin-bottom: 24px;
+  }
+  
+  .stats-section {
+    margin-bottom: 24px;
+  }
+  
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+  
+  .table-header .ant-space {
+    justify-content: center;
+  }
+  
+  .table-header .ant-btn {
+    width: 100%;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-management {
+    padding: 12px;
+  }
+  
+  .stats-section .ant-col {
+    margin-bottom: 12px;
+  }
+  
+  .table-header .ant-space {
+    flex-direction: column;
+  }
+  
+  .table-header .ant-input-search,
+  .table-header .ant-select {
+    width: 100% !important;
+  }
+}
+
+/* 状态标签样式 */
+.ant-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+/* 患者头像样式 */
+.ant-avatar {
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+}
+
+/* 表格行悬停效果 */
+.ant-table-tbody > tr:hover > td {
+  background-color: #f0f9ff !important;
+}
+
+/* 模态框样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 12px 12px 0 0;
+}
+
+.ant-modal .ant-modal-footer {
+  border-top: 1px solid #f0f0f0;
+  border-radius: 0 0 12px 12px;
+}
+
+/* 表单样式 */
+.ant-form-item-label > label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-input:focus,
+.ant-input-number:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+/* 按钮样式 */
+.ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  border-radius: 6px;
+  font-weight: 500;
+}
+
+.ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+}
+
+/* 搜索框样式 */
+.ant-input-search .ant-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+/* 统计数字样式 */
+.ant-statistic-content {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+.ant-statistic-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #666;
+  margin-bottom: 8px;
+}
+
+/* 详情模态框样式 */
+.ant-descriptions-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-descriptions-item-content {
+  color: #595959;
+}
+
+/* 分页样式 */
+.ant-pagination {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* 加载状态样式 */
+.ant-spin-nested-loading > div > .ant-spin {
+  max-height: none;
+}
+
+/* 空状态样式 */
+.ant-empty {
+  padding: 60px 0;
+}
+
+/* 工具提示样式 */
+.ant-tooltip-inner {
+  background: #262626;
+  color: white;
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* 确认对话框样式 */
+.ant-popconfirm-inner {
+  border-radius: 8px;
+}
+
+.ant-popconfirm-inner-content {
+  font-size: 14px;
+  color: #262626;
+}
+
+.ant-popconfirm-buttons .ant-btn-primary {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-popconfirm-buttons .ant-btn-primary:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* 代码文本样式 */
+.ant-typography code {
+  background: #f5f5f5;
+  border: 1px solid #d9d9d9;
+  border-radius: 4px;
+  padding: 2px 6px;
+  font-size: 12px;
+  color: #1890ff;
+}
+
+/* 描述列表样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+/* 输入框占位符样式 */
+::placeholder {
+  color: #bfbfbf;
+  font-size: 14px;
+}
+
+/* 选择器样式 */
+.ant-select-selector {
+  border-radius: 6px !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff !important;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1) !important;
+}
+
+/* 数字输入框样式 */
+.ant-input-number {
+  border-radius: 6px;
+}
+
+.ant-input-number-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+/* 文本域样式 */
+.ant-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.1);
+}
+
+/* 卡片样式 */
+.ant-card {
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.ant-card:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.ant-card-head {
+  border-bottom: 1px solid #f0f0f0;
+  border-radius: 12px 12px 0 0;
+}
+
+.ant-card-body {
+  padding: 24px;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 12px;
+  font-size: 12px;
+  padding: 2px 8px;
+  border: none;
+}
+
+.ant-tag-blue {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.ant-tag-pink {
+  background: #fff0f6;
+  color: #eb2f96;
+}
+
+.ant-tag-purple {
+  background: #f9f0ff;
+  color: #722ed1;
+}
+
+.ant-tag-success {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.ant-tag-processing {
+  background: #e6f7ff;
+  color: #1890ff;
+}
+
+.ant-tag-error {
+  background: #fff2f0;
+  color: #ff4d4f;
+}
+
+.ant-tag-warning {
+  background: #fffbe6;
+  color: #faad14;
+}
+
+.ant-tag-default {
+  background: #f5f5f5;
+  color: #8c8c8c;
+}
+
+/* 统计卡片中的标签样式 */
+.stats-section .ant-tag {
+  font-size: 11px;
+  padding: 1px 6px;
+  margin-left: 4px;
+}
+
+/* 卡片视图样式 */
+.patient-card-container {
+  margin-top: 16px;
+}
+
+.patient-card {
+  border-radius: 12px;
+  border: 1px solid #f0f0f0;
+  transition: all 0.3s ease;
+  height: 100%;
+  cursor: pointer;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.06);
+}
+
+.patient-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-color: #1890ff;
+}
+
+.patient-card-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.patient-card-info {
+  margin-left: 12px;
+  flex: 1;
+}
+
+.patient-card-name {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 4px;
+}
+
+.patient-card-meta {
+  font-size: 12px;
+  color: #8c8c8c;
+}
+
+.patient-card-content {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.patient-card-row {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.patient-card-row .label {
+  font-size: 12px;
+  color: #8c8c8c;
+  min-width: 60px;
+  font-weight: 500;
+}
+
+.patient-card-row .ant-typography {
+  font-size: 13px;
+  margin: 0;
+  flex: 1;
+}
+
+/* 卡片分页样式 */
+.card-pagination {
+  margin-top: 24px;
+  text-align: center;
+}
+
+/* 批量操作样式 */
+.batch-actions {
+  margin-bottom: 16px;
+  padding: 12px;
+  background: #f0f9ff;
+  border-radius: 8px;
+  border: 1px solid #d6e4ff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.batch-actions-info {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.batch-actions-buttons {
+  display: flex;
+  gap: 8px;
+}
+
+/* 视图切换样式 */
+.view-switch {
+  margin-right: 8px;
+}
+
+.view-switch .ant-radio-button-wrapper {
+  border-radius: 4px;
+  margin-right: 4px;
+}
+
+.view-switch .ant-radio-button-wrapper:first-child {
+  border-radius: 4px 0 0 4px;
+}
+
+.view-switch .ant-radio-button-wrapper:last-child {
+  border-radius: 0 4px 4px 0;
+}
+
+/* 导入导出样式 */
+.import-export-actions {
+  display: flex;
+  gap: 8px;
+}
+
+.upload-text {
+  font-size: 12px;
+  color: #8c8c8c;
+  margin-top: 4px;
+}
+
+/* 风险等级样式 */
+.risk-high {
+  background: #fff2f0;
+  color: #ff4d4f;
+  border: 1px solid #ffccc7;
+}
+
+.risk-medium {
+  background: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.risk-low {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+/* 表格选择样式 */
+.ant-table-selection-column {
+  width: 50px;
+}
+
+.ant-table-selection .ant-checkbox-wrapper {
+  align-items: center;
+}
+
+/* 加载骨架样式 */
+.ant-skeleton {
+  padding: 16px;
+}
+
+.ant-skeleton-title {
+  margin-bottom: 16px;
+}
+
+/* 错误状态样式 */
+.error-container {
+  text-align: center;
+  padding: 60px 20px;
+}
+
+.error-container .ant-result {
+  max-width: 500px;
+  margin: 0 auto;
+}
+
+/* 统计加载状态 */
+.stats-loading {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 60px;
+}
+
+/* 操作按钮样式 */
+.action-buttons {
+  display: flex;
+  gap: 4px;
+}
+
+.action-buttons .ant-btn {
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+/* 响应式卡片布局 */
+@media (max-width: 768px) {
+  .patient-card-container .ant-col {
+    margin-bottom: 16px;
+  }
+  
+  .patient-card-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .patient-card-info {
+    margin-left: 0;
+    margin-top: 8px;
+  }
+  
+  .patient-card-name {
+    justify-content: center;
+  }
+  
+  .batch-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .batch-actions-buttons {
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+}
+
+@media (max-width: 480px) {
+  .patient-card-container .ant-col {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+  
+  .table-header {
+    flex-direction: column;
+  }
+  
+  .table-header .ant-space {
+    flex-direction: column;
+    width: 100%;
+  }
+  
+  .table-header .ant-space-item {
+    width: 100%;
+  }
+  
+  .table-header .ant-input-search,
+  .table-header .ant-select,
+  .table-header .ant-btn {
+    width: 100% !important;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.patient-card {
+  animation: fadeInUp 0.5s ease-out;
+}
+
+.patient-card:nth-child(1) { animation-delay: 0.1s; }
+.patient-card:nth-child(2) { animation-delay: 0.2s; }
+.patient-card:nth-child(3) { animation-delay: 0.3s; }
+.patient-card:nth-child(4) { animation-delay: 0.4s; }
+
+/* 工具提示增强 */
+.ant-tooltip {
+  font-size: 12px;
+}
+
+.ant-tooltip-inner {
+  background: rgba(0, 0, 0, 0.85);
+  border-radius: 6px;
+  padding: 6px 12px;
+}
+
+/* 下拉菜单样式 */
+.ant-dropdown-menu {
+  border-radius: 8px;
+  box-shadow: 0 3px 6px -4px rgba(0, 0, 0, 0.12), 0 6px 16px 0 rgba(0, 0, 0, 0.08), 0 9px 28px 8px rgba(0, 0, 0, 0.05);
+}
+
+.ant-dropdown-menu-item {
+  border-radius: 4px;
+  margin: 4px 8px;
+  padding: 8px 12px;
+}
+
+.ant-dropdown-menu-item:hover {
+  background: #f0f9ff;
+  color: #1890ff;
+}
+
+/* 上传组件样式 */
+.ant-upload {
+  display: inline-block;
+}
+
+.ant-upload-list {
+  margin-top: 8px;
+}
+
+/* 进度指示器 */
+.progress-indicator {
+  margin: 16px 0;
+}
+
+/* 空状态增强 */
+.ant-empty {
+  padding: 40px 0;
+}
+
+.ant-empty-image {
+  height: 100px;
+}
+
+/* 打印样式 */
+@media print {
+  .patient-management {
+    padding: 0;
+    background: white;
+  }
+  
+  .table-header,
+  .stats-section,
+  .action-buttons {
+    display: none;
+  }
+  
+  .ant-table {
+    border: 1px solid #f0f0f0;
+  }
+  
+  .ant-table-thead > tr > th {
+    background: #fafafa;
+    font-weight: 600;
+  }
+}

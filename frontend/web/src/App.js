@@ -1,13 +1,20 @@
 import React from 'react';
-import { BrowserRouter as Router } from 'react-router-dom';
+import { BrowserRouter as Router, Routes, Route, UNSAFE_RouteContext } from 'react-router-dom';
 import './App.css';
-import AppRoutes from './routes';
+import routes from './routes';
 
 function App() {
   return (
-    <Router>
+    <Router future={{
+      v7_startTransition: true,
+      v7_relativeSplatPath: true
+    }}>
       <div className="App">
-        <AppRoutes />
+        <Routes>
+          {routes.map((route, index) => (
+            <Route key={index} path={route.path} element={route.element} />
+          ))}
+        </Routes>
       </div>
     </Router>
   );

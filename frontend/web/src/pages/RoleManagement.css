@@ -1,0 +1,759 @@
+/* 权限管理页面样式 */
+.role-management {
+  min-height: 100%;
+}
+
+/* 页面标题区域 */
+.role-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.role-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.role-header .page-icon {
+  font-size: 28px;
+  color: #1890ff;
+}
+
+/* 统计卡片区域 */
+.role-stats {
+  margin-bottom: 24px;
+}
+
+.stats-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stats-card .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stats-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 主要内容区域 */
+.role-content {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.tab-content {
+  padding: 16px 0;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* 表格样式 */
+.role-content .ant-table {
+  border-radius: 8px;
+}
+
+.role-content .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.role-content .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.role-content .ant-table-tbody > tr > td {
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-green {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  color: #52c41a;
+}
+
+.ant-tag-blue {
+  background: #f0f9ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+.ant-tag-orange {
+  background: #fff7e6;
+  border-color: #ffd591;
+  color: #fa8c16;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 弹窗样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-modal .ant-form-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+/* 记录详情样式 */
+.record-detail {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.record-detail .ant-descriptions {
+  margin-bottom: 16px;
+}
+
+.record-detail .ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+/* 标签页样式 */
+.ant-tabs-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+  background: #1890ff;
+}
+
+/* 搜索框样式 */
+.table-header .ant-input-search {
+  border-radius: 8px;
+}
+
+.table-header .ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.table-header .ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.table-header .ant-select {
+  border-radius: 8px;
+}
+
+.table-header .ant-select-selector {
+  border-radius: 8px !important;
+}
+
+/* 数字输入框样式 */
+.ant-input-number {
+  border-radius: 8px;
+}
+
+.ant-input-number:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 日期选择器样式 */
+.ant-picker {
+  border-radius: 8px;
+}
+
+.ant-picker:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 进度条样式 */
+.ant-progress {
+  border-radius: 8px;
+}
+
+.ant-progress-bg {
+  border-radius: 8px;
+}
+
+/* 描述列表样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  border-color: #f0f0f0;
+}
+
+/* 警告提示样式 */
+.ant-alert {
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.ant-alert-info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.ant-alert-warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.ant-alert-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.ant-alert-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+
+/* 角色状态样式 */
+.role-active {
+  color: #52c41a;
+}
+
+.role-inactive {
+  color: #ff4d4f;
+}
+
+/* 角色等级样式 */
+.role-level-1 {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.role-level-2 {
+  color: #fa8c16;
+}
+
+.role-level-3 {
+  color: #1890ff;
+}
+
+.role-level-4 {
+  color: #52c41a;
+}
+
+/* 权限树样式 */
+.ant-tree {
+  border-radius: 8px;
+  padding: 16px;
+  background: #fafafa;
+}
+
+.ant-tree-node-content-wrapper {
+  border-radius: 4px;
+}
+
+.ant-tree-node-content-wrapper:hover {
+  background: #e6f7ff;
+}
+
+.ant-tree-checkbox-checked .ant-tree-checkbox-inner {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .role-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .role-header .page-title {
+    font-size: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header > * {
+    width: 100%;
+  }
+
+  .role-stats {
+    margin-bottom: 16px;
+  }
+
+  .stats-card {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .role-header {
+    padding: 16px;
+  }
+
+  .role-header .page-title {
+    font-size: 18px;
+  }
+
+  .role-header .page-icon {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-content {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-title {
+    font-size: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+.stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* 自定义滚动条 */
+.record-detail::-webkit-scrollbar,
+.role-content ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.record-detail::-webkit-scrollbar-track,
+.role-content ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.record-detail::-webkit-scrollbar-thumb,
+.role-content ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.record-detail::-webkit-scrollbar-thumb:hover,
+.role-content ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 焦点状态样式 */
+.ant-input:focus,
+.ant-input-number:focus,
+.ant-picker:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 禁用状态样式 */
+.ant-input:disabled,
+.ant-input-number:disabled,
+.ant-picker:disabled,
+.ant-select-disabled .ant-select-selector {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 只读状态样式 */
+.ant-input[readonly],
+.ant-input-number[readonly] {
+  background: #fafafa;
+  color: #666;
+  cursor: default;
+}
+
+/* 按钮悬停效果 */
+.role-content .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.role-content .ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格行悬停效果 */
+.role-content .ant-table-tbody > tr {
+  transition: all 0.3s;
+}
+
+.role-content .ant-table-tbody > tr:hover {
+  background: #f0f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 禁用角色高亮 */
+.inactive-row {
+  background: #fff2f0 !important;
+}
+
+.inactive-row:hover {
+  background: #ffece8 !important;
+}
+
+/* 高亮状态样式 */
+.highlight {
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  color: #fa8c16;
+}
+
+/* 成功状态样式 */
+.success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #52c41a;
+}
+
+/* 错误状态样式 */
+.error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #ff4d4f;
+}
+
+/* 警告状态样式 */
+.warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  color: #fa8c16;
+}
+
+/* 信息状态样式 */
+.info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #1890ff;
+}
+
+/* 角色状态指示器 */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.status-indicator.active {
+  background: #52c41a;
+}
+
+.status-indicator.inactive {
+  background: #ff4d4f;
+}
+
+/* 角色信息卡片 */
+.role-info-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.role-info-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.1);
+}
+
+.role-info-card.role-active {
+  border-color: #52c41a;
+}
+
+.role-info-card.role-inactive {
+  border-color: #ff4d4f;
+}
+
+/* 权限图标样式 */
+.permission-icon {
+  margin-right: 8px;
+  color: #1890ff;
+}
+
+.permission-icon.module {
+  color: #722ed1;
+}
+
+.permission-icon.operation {
+  color: #52c41a;
+}
+
+/* 搜索高亮 */
+.search-highlight {
+  background: #fffbe6;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* 空状态样式 */
+.ant-empty {
+  padding: 40px 0;
+}
+
+.ant-empty-image {
+  height: 100px;
+}
+
+/* 加载状态样式 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+/* 响应式表格 */
+@media (max-width: 576px) {
+  .role-content .ant-table {
+    font-size: 12px;
+  }
+  
+  .role-content .ant-table-thead > tr > th {
+    padding: 8px 4px;
+  }
+  
+  .role-content .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+  }
+  
+  .ant-btn-sm {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .role-header,
+  .role-stats,
+  .table-header,
+  .ant-tabs-nav,
+  .ant-btn {
+    display: none !important;
+  }
+  
+  .role-content {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .ant-table {
+    border: 1px solid #ddd !important;
+  }
+}
+
+/* 权限树特殊样式 */
+.ant-tree .ant-tree-node-content-wrapper {
+  width: calc(100% - 24px);
+}
+
+.ant-tree .ant-tree-switcher {
+  width: 24px;
+}
+
+.ant-tree .ant-tree-checkbox {
+  margin-right: 8px;
+}
+
+/* 权限标签对齐 */
+.permission-title {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.permission-title .permission-name {
+  display: flex;
+  align-items: center;
+  flex: 1;
+}
+
+.permission-title .permission-tag {
+  flex-shrink: 0;
+}
+
+/* 模块和操作区分 */
+.permission-module {
+  font-weight: 600;
+  color: #262626;
+}
+
+.permission-operation {
+  font-weight: 400;
+  color: #666;
+}
+
+/* 权限选择状态 */
+.permission-selected {
+  background: #f0f9ff;
+  border-left: 3px solid #1890ff;
+}
+
+.permission-partial {
+  background: #fff7e6;
+  border-left: 3px solid #fa8c16;
+}
+
+/* 权限描述样式 */
+.permission-description {
+  font-size: 12px;
+  color: #999;
+  margin-left: 24px;
+}
+
+/* 角色代码样式 */
+.role-code {
+  font-family: 'Courier New', monospace;
+  background: #f5f5f5;
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+/* 角色等级指示器 */
+.role-level-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+}
+
+.role-level-indicator .level-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.role-level-indicator.level-1 .level-dot {
+  background: #ff4d4f;
+}
+
+.role-level-indicator.level-2 .level-dot {
+  background: #fa8c16;
+}
+
+.role-level-indicator.level-3 .level-dot {
+  background: #1890ff;
+}
+
+.role-level-indicator.level-4 .level-dot {
+  background: #52c41a;
+}

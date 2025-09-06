@@ -1,0 +1,605 @@
+/* 设备报废管理页面样式 */
+.disposal-management {
+  min-height: 100%;
+}
+
+/* 页面标题区域 */
+.disposal-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.disposal-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.disposal-header .page-icon {
+  font-size: 28px;
+  color: #722ed1;
+}
+
+/* 统计卡片区域 */
+.disposal-stats {
+  margin-bottom: 24px;
+}
+
+.stats-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stats-card .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stats-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 价值统计卡片 */
+.value-stats {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  margin-bottom: 24px;
+}
+
+.value-stats .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.value-stats .ant-statistic-content {
+  font-size: 24px;
+  font-weight: 700;
+}
+
+/* 主要内容区域 */
+.disposal-content {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* 表格样式 */
+.disposal-content .ant-table {
+  border-radius: 8px;
+}
+
+.disposal-content .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.disposal-content .ant-table-tbody > tr:hover > td {
+  background: #f9f0ff;
+}
+
+.disposal-content .ant-table-tbody > tr > td {
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* 进度条样式 */
+.disposal-content .ant-progress {
+  margin-bottom: 0;
+}
+
+.disposal-content .ant-progress-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 处置方式标签 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-green {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  color: #52c41a;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+.ant-tag-blue {
+  background: #f0f9ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.ant-tag-orange {
+  background: #fff7e6;
+  border-color: #ffd591;
+  color: #fa8c16;
+}
+
+/* 弹窗样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-modal .ant-form-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+/* 申请详情样式 */
+.application-detail {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.application-detail .ant-descriptions {
+  margin-bottom: 16px;
+}
+
+.application-detail .ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+/* 步骤条样式 */
+.ant-steps {
+  margin-bottom: 24px;
+}
+
+.ant-steps-item-finish .ant-steps-item-tail::after {
+  background: #52c41a;
+}
+
+.ant-steps-item-process .ant-steps-item-icon {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-steps-item-finish .ant-steps-item-icon {
+  background: #52c41a;
+  border-color: #52c41a;
+}
+
+.ant-steps-item-error .ant-steps-item-icon {
+  background: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+/* 时间线样式 */
+.ant-timeline {
+  margin-top: 16px;
+}
+
+.ant-timeline-item {
+  padding-bottom: 16px;
+}
+
+.ant-timeline-item-head {
+  background: #722ed1;
+}
+
+.ant-timeline-item-head-blue {
+  background: #1890ff;
+}
+
+.ant-timeline-item-head-green {
+  background: #52c41a;
+}
+
+.ant-timeline-item-head-red {
+  background: #ff4d4f;
+}
+
+.ant-timeline-item-head-gray {
+  background: #d9d9d9;
+}
+
+/* 审批内容样式 */
+.approval-content {
+  max-height: 500px;
+  overflow-y: auto;
+}
+
+.approval-content .ant-alert {
+  margin-bottom: 24px;
+  border-radius: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .disposal-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .disposal-header .page-title {
+    font-size: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header > * {
+    width: 100%;
+  }
+
+  .disposal-stats {
+    margin-bottom: 16px;
+  }
+
+  .stats-card {
+    margin-bottom: 16px;
+  }
+
+  .value-stats {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .disposal-header {
+    padding: 16px;
+  }
+
+  .disposal-header .page-title {
+    font-size: 18px;
+  }
+
+  .disposal-header .page-icon {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-content {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-title {
+    font-size: 12px;
+  }
+
+  .value-stats .ant-statistic-content {
+    font-size: 20px;
+  }
+
+  .value-stats .ant-statistic-title {
+    font-size: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+.stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* 自定义滚动条 */
+.application-detail::-webkit-scrollbar,
+.approval-content::-webkit-scrollbar,
+.disposal-content ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.application-detail::-webkit-scrollbar-track,
+.approval-content::-webkit-scrollbar-track,
+.disposal-content ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.application-detail::-webkit-scrollbar-thumb,
+.approval-content::-webkit-scrollbar-thumb,
+.disposal-content ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.application-detail::-webkit-scrollbar-thumb:hover,
+.approval-content::-webkit-scrollbar-thumb:hover,
+.disposal-content ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 搜索框样式 */
+.table-header .ant-input-search {
+  border-radius: 8px;
+}
+
+.table-header .ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.table-header .ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.table-header .ant-select {
+  border-radius: 8px;
+}
+
+.table-header .ant-select-selector {
+  border-radius: 8px !important;
+}
+
+/* 标签页样式 */
+.ant-tabs-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-tabs-tab-active {
+  color: #722ed1;
+  font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+  background: #722ed1;
+}
+
+/* 上传组件样式 */
+.ant-upload {
+  border-radius: 8px;
+}
+
+.ant-upload-drag {
+  border-radius: 8px;
+  border: 2px dashed #d9d9d9;
+}
+
+.ant-upload-drag:hover {
+  border-color: #722ed1;
+}
+
+/* 描述列表样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  border-color: #f0f0f0;
+}
+
+/* 列表样式 */
+.ant-list-item {
+  border-radius: 8px;
+  transition: all 0.3s;
+}
+
+.ant-list-item:hover {
+  background: #f5f5f5;
+}
+
+.ant-list-item-meta-avatar {
+  background: #f0f0f0;
+  border-radius: 6px;
+}
+
+/* 数字输入框样式 */
+.ant-input-number {
+  border-radius: 8px;
+}
+
+.ant-input-number:focus {
+  border-color: #722ed1;
+  box-shadow: 0 0 0 2px rgba(114, 46, 209, 0.2);
+}
+
+/* 加载状态样式 */
+.disposal-content .ant-table-placeholder {
+  border-radius: 8px;
+}
+
+.disposal-content .ant-spin-nested-loading {
+  border-radius: 8px;
+}
+
+/* 表格行悬停效果 */
+.disposal-content .ant-table-tbody > tr {
+  transition: all 0.3s;
+}
+
+.disposal-content .ant-table-tbody > tr:hover {
+  background: #f9f0ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮悬停效果 */
+.disposal-content .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.disposal-content .ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 审批按钮特殊样式 */
+.ant-btn-processing {
+  background: #1890ff;
+  border-color: #1890ff;
+  color: white;
+}
+
+.ant-btn-processing:hover {
+  background: #40a9ff;
+  border-color: #40a9ff;
+}
+
+/* 状态颜色映射 */
+.status-draft {
+  color: #8c8c8c;
+}
+
+.status-pending {
+  color: #1890ff;
+}
+
+.status-processing {
+  color: #fa8c16;
+}
+
+.status-approved {
+  color: #52c41a;
+}
+
+.status-rejected {
+  color: #ff4d4f;
+}
+
+.status-disposing {
+  color: #722ed1;
+}
+
+.status-completed {
+  color: #52c41a;
+}
+
+/* 处置方式颜色映射 */
+.method-recycling {
+  color: #52c41a;
+}
+
+.method-destruction {
+  color: #ff4d4f;
+}
+
+.method-donation {
+  color: #1890ff;
+}
+
+.method-sale {
+  color: #fa8c16;
+}
+
+/* 金额显示样式 */
+.amount-value {
+  font-weight: 600;
+  color: #52c41a;
+}
+
+.amount-original {
+  color: #1890ff;
+  font-weight: 500;
+}
+
+/* 警告提示样式 */
+.ant-alert-info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.ant-alert-warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.ant-alert-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.ant-alert-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+}

@@ -2,11 +2,10 @@ import axios from 'axios';
 
 // 创建axios实例
 const api = axios.create({
-  baseURL: 'http://localhost:3001/api', // 后端服务地址
+  baseURL: process.env.NODE_ENV === 'production' 
+    ? '/api'  // 生产环境使用相对路径，由nginx代理
+    : 'http://localhost:4000/api', // 开发环境使用本地后端服务
   timeout: 10000,
-  headers: {
-    'Content-Type': 'application/json',
-  },
 });
 
 // 请求拦截器
@@ -31,9 +30,9 @@ api.interceptors.response.use(
   },
   (error) => {
     if (error.response?.status === 401) {
-      // 未授权，清除token并跳转到登录页
+      // token过期或无效，清除本地存储并跳转到登录页
       localStorage.removeItem('token');
-      window.location.href = '/'; // 跳转到登录页
+      window.location.href = '/login';
     }
     return Promise.reject(error);
   }

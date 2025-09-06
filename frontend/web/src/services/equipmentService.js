@@ -3,12 +3,15 @@ import api from './api';
 class EquipmentService {
   /**
    * 获取设备列表
-   * @param {Object} params - 查询参数
+   * @param {number} page - 页码
+   * @param {number} pageSize - 每页数量
    * @returns {Promise<Object>}
    */
-  async getEquipmentList(params = {}) {
+  async getEquipment(page = 1, pageSize = 10) {
     try {
-      const response = await api.get('/equipment', { params });
+      const response = await api.get('/equipment', {
+        params: { page, pageSize }
+      });
       return response.data;
     } catch (error) {
       throw new Error(error.response?.data?.message || '获取设备列表失败');

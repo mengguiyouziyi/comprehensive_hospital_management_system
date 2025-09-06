@@ -1,40 +1,1978 @@
+/* 设备管理页面样式 */
 .equipment-management {
-  padding: 24px;
+  min-height: 100%;
 }
 
+/* 页面标题区域 */
 .equipment-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
 }
 
-.equipment-header h2 {
+.equipment-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
   margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
 }
 
-.equipment-stats {
-  background: #f5f5f5;
-  padding: 16px;
-  border-radius: 4px;
+.equipment-header .page-icon {
+  font-size: 28px;
+  color: #1890ff;
+}
+
+/* 统计卡片区域 */
+.stats-section {
   margin-bottom: 24px;
 }
 
-.equipment-stats-card {
-  background: white;
-  padding: 16px;
-  border-radius: 4px;
-  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+.stats-section .ant-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
   text-align: center;
 }
 
-.equipment-stats-card h3 {
-  margin-top: 0;
-  color: #333;
+.stats-section .ant-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
 }
 
-.equipment-stats-card .count {
+.stats-section .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stats-section .ant-statistic-content {
   font-size: 24px;
-  font-weight: bold;
+  font-weight: 700;
+}
+
+/* 表格区域 */
+.table-section {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  flex-wrap: wrap;
+  gap: 16px;
+}
+
+.table-header-left {
+  flex: 1;
+  min-width: 0;
+}
+
+.table-header-right {
+  flex-shrink: 0;
+}
+
+/* 表格样式 */
+.ant-table {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.ant-table-tbody > tr > td {
+  border-bottom: 1px solid #f0f0f0;
+  padding: 12px 8px;
+}
+
+/* 设备卡片视图 */
+.equipment-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+.equipment-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+  border-color: #1890ff;
+}
+
+.equipment-card-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 16px;
+  padding-bottom: 12px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.equipment-card-content {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.equipment-card-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 12px;
+}
+
+.equipment-card-row .ant-typography {
+  margin: 0;
+}
+
+/* 卡片视图容器 */
+.card-view-container {
+  min-height: 400px;
+}
+
+.card-view-pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 24px;
+  padding-top: 16px;
+  border-top: 1px solid #f0f0f0;
+}
+
+/* 模态框样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+  max-height: 70vh;
+  overflow-y: auto;
+}
+
+.ant-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-modal .ant-form-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+/* 详情弹窗样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+  color: #262626;
+  width: 120px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  border-color: #f0f0f0;
+  color: #666;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-success {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  color: #52c41a;
+}
+
+.ant-tag-warning {
+  background: #fff7e6;
+  border-color: #ffd591;
+  color: #fa8c16;
+}
+
+.ant-tag-error {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+.ant-tag-processing {
+  background: #e6f7ff;
+  border-color: #91d5ff;
   color: #1890ff;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 进度条样式 */
+.ant-progress {
+  border-radius: 4px;
+}
+
+.ant-progress-bg {
+  border-radius: 4px;
+}
+
+/* 按钮样式 */
+.ant-btn {
+  border-radius: 8px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+.ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+}
+
+.ant-btn-danger {
+  background: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.ant-btn-danger:hover {
+  background: #ff7875;
+  border-color: #ff7875;
+}
+
+/* 搜索框样式 */
+.ant-input-search {
+  border-radius: 8px;
+}
+
+.ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.ant-select {
+  border-radius: 8px;
+}
+
+.ant-select-selector {
+  border-radius: 8px !important;
+}
+
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 日期选择器样式 */
+.ant-picker {
+  border-radius: 8px;
+}
+
+.ant-picker:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 数字输入框样式 */
+.ant-input-number {
+  border-radius: 8px;
+}
+
+.ant-input-number:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 文本域样式 */
+.ant-input {
+  border-radius: 8px;
+}
+
+.ant-input:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.ant-input-textarea {
+  border-radius: 8px;
+}
+
+.ant-input-textarea:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 单选按钮组样式 */
+.ant-radio-group {
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.ant-radio-button-wrapper {
+  border-radius: 0;
+  border: 1px solid #d9d9d9;
+}
+
+.ant-radio-button-wrapper:first-child {
+  border-radius: 8px 0 0 8px;
+}
+
+.ant-radio-button-wrapper:last-child {
+  border-radius: 0 8px 8px 0;
+}
+
+.ant-radio-button-wrapper-checked {
+  background: #1890ff;
+  border-color: #1890ff;
+  color: white;
+}
+
+/* 分页样式 */
+.ant-pagination {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.ant-pagination-item {
+  border-radius: 8px;
+}
+
+.ant-pagination-item-active {
+  background: #1890ff;
+  border-color: #1890ff;
+}
+
+.ant-pagination-prev,
+.ant-pagination-next {
+  border-radius: 8px;
+}
+
+/* 工具提示样式 */
+.ant-tooltip-inner {
+  border-radius: 6px;
+  font-size: 12px;
+}
+
+/* 弹出确认框样式 */
+.ant-popover-inner-content {
+  border-radius: 8px;
+}
+
+/* 确认对话框样式 */
+.ant-modal-confirm .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal-confirm .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal-confirm-title {
+  font-size: 16px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.ant-modal-confirm-content {
+  font-size: 14px;
+  color: #666;
+  margin-top: 8px;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .equipment-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .equipment-header .page-title {
+    font-size: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+    gap: 16px;
+  }
+
+  .table-header-left,
+  .table-header-right {
+    width: 100%;
+  }
+
+  .table-header-right .ant-space {
+    width: 100%;
+    justify-content: space-between;
+  }
+
+  .stats-section {
+    margin-bottom: 16px;
+  }
+
+  .stats-section .ant-card {
+    margin-bottom: 16px;
+  }
+
+  .equipment-card-row {
+    font-size: 11px;
+  }
+
+  .ant-table {
+    font-size: 12px;
+  }
+
+  .ant-table-thead > tr > th {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+    font-size: 12px;
+  }
+
+  .ant-btn-sm {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+
+  .ant-modal {
+    margin: 16px;
+    width: calc(100% - 32px) !important;
+  }
+
+  .ant-modal-body {
+    padding: 16px;
+  }
+
+  .ant-descriptions-bordered .ant-descriptions-item-label {
+    width: 100px;
+    font-size: 12px;
+  }
+
+  .ant-descriptions-bordered .ant-descriptions-item-content {
+    font-size: 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .equipment-header {
+    padding: 16px;
+  }
+
+  .equipment-header .page-title {
+    font-size: 18px;
+  }
+
+  .equipment-header .page-icon {
+    font-size: 24px;
+  }
+
+  .stats-section .ant-statistic-content {
+    font-size: 20px;
+  }
+
+  .stats-section .ant-statistic-title {
+    font-size: 12px;
+  }
+
+  .equipment-card {
+    margin-bottom: 12px;
+  }
+
+  .equipment-card-header {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+  }
+
+  .equipment-card-row {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+  }
+
+  .table-header-right .ant-space {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .table-header-right .ant-btn {
+    width: 100%;
+  }
+
+  .ant-table {
+    overflow-x: auto;
+  }
+
+  .ant-table-container {
+    min-width: 600px;
+  }
+}
+
+/* 加载状态样式 */
+.equipment-management .ant-spin {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+}
+
+/* 错误状态样式 */
+.equipment-management .ant-result {
+  padding: 48px 24px;
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-section .ant-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+.stats-section .ant-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-section .ant-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-section .ant-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-section .ant-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stats-section .ant-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stats-section .ant-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+.equipment-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+/* 自定义滚动条 */
+.table-section ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.table-section ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.table-section ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.table-section ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 批量操作样式 */
+.table-header-right .ant-select {
+  min-width: 120px;
+}
+
+.table-header-right .ant-btn-danger {
+  background: #ff4d4f;
+  border-color: #ff4d4f;
+}
+
+.table-header-right .ant-btn-danger:hover {
+  background: #ff7875;
+  border-color: #ff7875;
+}
+
+/* 视图切换样式 */
+.table-header-right .ant-radio-group {
+  border: 1px solid #d9d9d9;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.table-header-right .ant-radio-button-wrapper {
+  border-radius: 0;
+  border: none;
+  background: white;
+}
+
+.table-header-right .ant-radio-button-wrapper-checked {
+  background: #1890ff;
+  color: white;
+}
+
+/* 导出按钮样式 */
+.table-header-right .ant-btn-icon-only {
+  border-radius: 8px;
+}
+
+/* 卡片视图操作按钮样式 */
+.equipment-card .ant-card-actions {
+  background: #fafafa;
+  border-top: 1px solid #f0f0f0;
+}
+
+.equipment-card .ant-card-actions li {
+  margin: 8px 0;
+}
+
+.equipment-card .ant-card-actions li:not(:last-child) {
+  border-right: 1px solid #f0f0f0;
+}
+
+/* 焦点状态样式 */
+.ant-input:focus,
+.ant-input-number:focus,
+.ant-picker:focus,
+.ant-select-focused .ant-select-selector,
+.ant-radio-button-wrapper:focus-within {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 禁用状态样式 */
+.ant-input:disabled,
+.ant-input-number:disabled,
+.ant-picker:disabled,
+.ant-select-disabled .ant-select-selector {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 只读状态样式 */
+.ant-input[readonly],
+.ant-input-number[readonly] {
+  background: #fafafa;
+  color: #666;
+  cursor: default;
+}
+
+/* 高优先级警告样式 */
+.equipment-management .ant-alert-warning {
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.equipment-management .ant-alert-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+/* 状态指示器样式 */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  font-size: 11px;
+  font-weight: 500;
+}
+
+.status-indicator.overdue {
+  background: #fff2f0;
+  color: #ff4d4f;
+  border: 1px solid #ffccc7;
+}
+
+.status-indicator.urgent {
+  background: #fff7e6;
+  color: #fa8c16;
+  border: 1px solid #ffd591;
+}
+
+.status-indicator.approaching {
+  background: #e6f7ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+.status-indicator.normal {
+  background: #f6ffed;
+  color: #52c41a;
+  border: 1px solid #b7eb8f;
+}
+
+/* 设备详情弹窗样式 */
+.equipment-detail-modal .ant-modal-body {
+  padding: 0;
+}
+
+.equipment-detail-content {
+  padding: 24px;
+}
+
+.equipment-detail-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  margin-bottom: 24px;
+  padding-bottom: 16px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.equipment-detail-title {
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.equipment-detail-subtitle {
+  font-size: 14px;
+  color: #666;
+  margin-top: 4px;
+}
+
+/* 表单分组样式 */
+.form-section {
+  margin-bottom: 24px;
+  padding: 16px;
+  border-radius: 8px;
+  background: #fafafa;
+  border: 1px solid #f0f0f0;
+}
+
+.form-section-title {
+  font-size: 14px;
+  font-weight: 600;
+  color: #262626;
+  margin-bottom: 16px;
+  padding-bottom: 8px;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+/* 表单提示样式 */
+.form-tip {
+  font-size: 12px;
+  color: #666;
+  margin-top: 4px;
+  padding: 8px;
+  background: #f0f9ff;
+  border-radius: 4px;
+  border-left: 3px solid #1890ff;
+}
+
+/* 表单验证样式 */
+.form-error {
+  font-size: 12px;
+  color: #ff4d4f;
+  margin-top: 4px;
+}
+
+/* 设备图片上传样式 */
+.equipment-image-upload {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+}
+
+.equipment-image-preview {
+  width: 100px;
+  height: 100px;
+  border-radius: 8px;
+  object-fit: cover;
+  border: 1px solid #d9d9d9;
+}
+
+.equipment-image-upload .ant-upload {
+  border-radius: 8px;
+  border: 1px dashed #d9d9d9;
+  background: #fafafa;
+}
+
+.equipment-image-upload .ant-upload:hover {
+  border-color: #1890ff;
+}
+
+/* 设备二维码样式 */
+.equipment-qrcode {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+}
+
+.equipment-qrcode-text {
+  font-family: monospace;
+  font-size: 14px;
+  color: #666;
+  background: white;
+  padding: 4px 8px;
+  border-radius: 4px;
+  border: 1px solid #d9d9d9;
+}
+
+/* 设备维护记录样式 */
+.maintenance-record {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.maintenance-record:last-child {
+  margin-bottom: 0;
+}
+
+.maintenance-record-type {
+  font-weight: 500;
+  color: #262626;
+}
+
+.maintenance-record-date {
+  font-size: 12px;
+  color: #666;
+}
+
+.maintenance-record-technician {
+  font-size: 12px;
+  color: #666;
+}
+
+.maintenance-record-status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备使用记录样式 */
+.usage-record {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.usage-record:last-child {
+  margin-bottom: 0;
+}
+
+.usage-record-user {
+  font-weight: 500;
+  color: #262626;
+}
+
+.usage-record-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.usage-record-duration {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 设备报警记录样式 */
+.alert-record {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fff2f0;
+  border-radius: 8px;
+  border: 1px solid #ffccc7;
+  margin-bottom: 8px;
+}
+
+.alert-record:last-child {
+  margin-bottom: 0;
+}
+
+.alert-record-type {
+  font-weight: 500;
+  color: #ff4d4f;
+}
+
+.alert-record-time {
+  font-size: 12px;
+  color: #666;
+}
+
+.alert-record-message {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 设备文档样式 */
+.document-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  margin-bottom: 8px;
+}
+
+.document-item:last-child {
+  margin-bottom: 0;
+}
+
+.document-item-name {
+  font-weight: 500;
+  color: #262626;
+}
+
+.document-item-size {
+  font-size: 12px;
+  color: #666;
+}
+
+.document-item-date {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 设备备注样式 */
+.equipment-notes {
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 8px;
+  border: 1px solid #f0f0f0;
+  font-size: 14px;
+  color: #666;
+  line-height: 1.5;
+}
+
+.equipment-notes:empty::before {
+  content: '暂无备注';
+  color: #999;
+}
+
+/* 设备标签样式 */
+.equipment-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-tag {
+  font-size: 11px;
+  padding: 2px 6px;
+  border-radius: 4px;
+  background: #f0f9ff;
+  color: #1890ff;
+  border: 1px solid #91d5ff;
+}
+
+/* 设备评分样式 */
+.equipment-rating {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-rating-label {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-rating-value {
+  font-size: 14px;
+  font-weight: 500;
+  color: #262626;
+}
+
+/* 设备位置样式 */
+.equipment-location {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-location-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-location-map {
+  width: 100%;
+  height: 200px;
+  border-radius: 8px;
+  overflow: hidden;
+  margin-top: 8px;
+}
+
+/* 设备联系人样式 */
+.equipment-contact {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-contact-name {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-contact-phone {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-contact-email {
+  font-size: 12px;
+  color: #666;
+}
+
+/* 设备保修样式 */
+.equipment-warranty {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-warranty-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-warranty-status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备维护样式 */
+.equipment-maintenance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-maintenance-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-maintenance-status {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备使用样式 */
+.equipment-usage {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-usage-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-usage-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备成本样式 */
+.equipment-cost {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-cost-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-cost-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备效率样式 */
+.equipment-efficiency {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-efficiency-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-efficiency-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备可靠性样式 */
+.equipment-reliability {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-reliability-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-reliability-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备安全性样式 */
+.equipment-safety {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-safety-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-safety-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备合规性样式 */
+.equipment-compliance {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-compliance-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-compliance-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备培训样式 */
+.equipment-training {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-training-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-training-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备认证样式 */
+.equipment-certification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-certification-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-certification-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备标准样式 */
+.equipment-standard {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-standard-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-standard-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备规范样式 */
+.equipment-specification {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-specification-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-specification-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备参数样式 */
+.equipment-parameter {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-parameter-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-parameter-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备配置样式 */
+.equipment-configuration {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-configuration-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-configuration-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备附件样式 */
+.equipment-accessory {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-accessory-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-accessory-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备配件样式 */
+.equipment-part {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-part-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-part-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备工具样式 */
+.equipment-tool {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-tool-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-tool-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备耗材样式 */
+.equipment-consumable {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-consumable-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-consumable-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备软件样式 */
+.equipment-software {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-software-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-software-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备固件样式 */
+.equipment-firmware {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-firmware-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-firmware-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备驱动样式 */
+.equipment-driver {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-driver-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-driver-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备接口样式 */
+.equipment-interface {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-interface-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-interface-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备协议样式 */
+.equipment-protocol {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-protocol-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-protocol-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备网络样式 */
+.equipment-network {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-network-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-network-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备安全样式 */
+.equipment-security {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-security-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-security-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备加密样式 */
+.equipment-encryption {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-encryption-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-encryption-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备备份样式 */
+.equipment-backup {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-backup-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-backup-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备恢复样式 */
+.equipment-recovery {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-recovery-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-recovery-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备监控样式 */
+.equipment-monitoring {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-monitoring-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-monitoring-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备报警样式 */
+.equipment-alert {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-alert-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-alert-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备日志样式 */
+.equipment-log {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-log-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-log-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备审计样式 */
+.equipment-audit {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-audit-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-audit-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备追踪样式 */
+.equipment-tracking {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-tracking-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-tracking-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备定位样式 */
+.equipment-positioning {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-positioning-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-positioning-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备导航样式 */
+.equipment-navigation {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-navigation-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-navigation-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备地图样式 */
+.equipment-map {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-map-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-map-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备路线样式 */
+.equipment-route {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-route-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-route-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备路径样式 */
+.equipment-path {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-path-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-path-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备轨迹样式 */
+.equipment-trajectory {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-trajectory-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-trajectory-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备历史样式 */
+.equipment-history {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-history-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-history-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备记录样式 */
+.equipment-record {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-record-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-record-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备档案样式 */
+.equipment-archive {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-archive-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-archive-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备文档样式 */
+.equipment-document {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-document-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-document-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备文件样式 */
+.equipment-file {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-file-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-file-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备图片样式 */
+.equipment-image {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-image-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-image-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备视频样式 */
+.equipment-video {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-video-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-video-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 设备音频样式 */
+.equipment-audio {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin-top: 8px;
+}
+
+.equipment-audio-text {
+  font-size: 12px;
+  color: #666;
+}
+
+.equipment-audio-value {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 打印样式 */
+@media print {
+  .equipment-header,
+  .table-header,
+  .ant-pagination,
+  .ant-btn,
+  .ant-radio-group,
+  .ant-modal {
+    display: none !important;
+  }
+  
+  .table-section {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .ant-table {
+    border: 1px solid #ddd !important;
+  }
+  
+  .equipment-card {
+    break-inside: avoid;
+    border: 1px solid #ddd !important;
+  }
 }

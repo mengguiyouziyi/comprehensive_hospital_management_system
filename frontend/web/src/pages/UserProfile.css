@@ -1,0 +1,271 @@
+.user-profile {
+  padding: 0;
+}
+
+.profile-card {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+}
+
+.avatar-card {
+  border: none;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  border-radius: 8px;
+  height: 100%;
+}
+
+.avatar-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 24px 0;
+  text-align: center;
+}
+
+.avatar-uploader {
+  margin-bottom: 16px;
+}
+
+.avatar-uploader .ant-upload {
+  border: 2px dashed #d9d9d9;
+  border-radius: 50%;
+  width: 120px;
+  height: 120px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.3s;
+  cursor: pointer;
+  background: #fafafa;
+}
+
+.avatar-uploader .ant-upload:hover {
+  border-color: #1890ff;
+  background: #f0f9ff;
+}
+
+.user-info {
+  margin-top: 16px;
+}
+
+.user-name {
+  margin: 0 0 4px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.user-role {
+  font-size: 14px;
+  color: #8c8c8c;
+  margin-bottom: 8px;
+}
+
+.user-status {
+  margin-top: 8px;
+}
+
+.user-details {
+  margin-top: 24px;
+}
+
+.user-details .ant-descriptions-item-label {
+  font-weight: 500;
+  color: #595959;
+}
+
+.user-details .ant-descriptions-item-content {
+  color: #262626;
+}
+
+.profile-tabs {
+  border: none;
+}
+
+.profile-tabs .ant-tabs-nav {
+  margin-bottom: 24px;
+}
+
+.profile-tabs .ant-tabs-tab {
+  font-weight: 500;
+  color: #595959;
+  padding: 12px 24px;
+  border-radius: 8px 8px 0 0;
+}
+
+.profile-tabs .ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.profile-tabs .ant-tabs-tab:hover {
+  color: #1890ff;
+}
+
+.form-actions {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 24px;
+  padding-top: 24px;
+  border-top: 1px solid #f0f0f0;
+}
+
+.profile-tabs .ant-form-item {
+  margin-bottom: 20px;
+}
+
+.profile-tabs .ant-form-item-label > label {
+  font-weight: 500;
+  color: #595959;
+}
+
+.profile-tabs .ant-input-prefix {
+  color: #8c8c8c;
+  margin-right: 8px;
+}
+
+.profile-tabs .ant-input-affix-wrapper {
+  border-radius: 6px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s;
+}
+
+.profile-tabs .ant-input-affix-wrapper:hover {
+  border-color: #40a9ff;
+}
+
+.profile-tabs .ant-input-affix-wrapper-focused {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+.profile-tabs .ant-input-disabled {
+  background-color: #f5f5f5;
+  color: #8c8c8c;
+  cursor: not-allowed;
+}
+
+.profile-tabs .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  height: 40px;
+  padding: 0 16px;
+}
+
+.profile-tabs .ant-btn-primary {
+  background: linear-gradient(135deg, #1890ff 0%, #096dd9 100%);
+  border: none;
+  box-shadow: 0 2px 4px rgba(24, 144, 255, 0.3);
+}
+
+.profile-tabs .ant-btn-primary:hover {
+  background: linear-gradient(135deg, #40a9ff 0%, #1890ff 100%);
+  box-shadow: 0 4px 8px rgba(24, 144, 255, 0.4);
+}
+
+.profile-tabs .ant-btn-primary:active {
+  transform: translateY(1px);
+  box-shadow: 0 1px 2px rgba(24, 144, 255, 0.3);
+}
+
+.profile-tabs .ant-btn-default {
+  border: 1px solid #d9d9d9;
+  color: #595959;
+}
+
+.profile-tabs .ant-btn-default:hover {
+  border-color: #40a9ff;
+  color: #1890ff;
+}
+
+.login-history-list .ant-list-item {
+  padding: 16px;
+  border-bottom: 1px solid #f0f0f0;
+  transition: all 0.3s;
+}
+
+.login-history-list .ant-list-item:hover {
+  background: #fafafa;
+}
+
+.login-history-list .ant-list-item-meta-avatar {
+  margin-right: 16px;
+}
+
+.login-history-list .ant-list-item-meta-title {
+  margin-bottom: 4px;
+  font-weight: 500;
+  color: #262626;
+}
+
+.login-history-list .ant-list-item-meta-description {
+  font-size: 13px;
+  color: #8c8c8c;
+  line-height: 1.5;
+}
+
+.login-history-list .ant-tag {
+  font-size: 12px;
+  padding: 2px 8px;
+  border-radius: 4px;
+  border: none;
+}
+
+.login-history-list .ant-tag-green {
+  background: #f6ffed;
+  color: #52c41a;
+}
+
+.login-history-list .ant-tag-red {
+  background: #fff2f0;
+  color: #ff4d4f;
+}
+
+.ant-divider {
+  margin: 16px 0;
+  border-color: #f0f0f0;
+}
+
+@media (max-width: 768px) {
+  .avatar-section {
+    padding: 16px 0;
+  }
+  
+  .user-details {
+    margin-top: 16px;
+  }
+  
+  .form-actions {
+    flex-direction: column;
+    gap: 12px;
+  }
+  
+  .form-actions .ant-btn {
+    width: 100%;
+  }
+  
+  .profile-tabs .ant-tabs-tab {
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+}
+
+@media (max-width: 480px) {
+  .profile-card {
+    margin: 0;
+  }
+  
+  .avatar-section {
+    padding: 12px 0;
+  }
+  
+  .profile-tabs .ant-tabs-tab {
+    padding: 6px 12px;
+    font-size: 13px;
+  }
+  
+  .login-history-list .ant-list-item {
+    padding: 12px;
+  }
+}

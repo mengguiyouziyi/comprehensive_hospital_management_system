@@ -1,0 +1,411 @@
+/* 培训考试管理页面样式 */
+.training-management {
+  min-height: 100%;
+}
+
+/* 页面标题区域 */
+.training-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.training-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.training-header .page-icon {
+  font-size: 28px;
+  color: #1890ff;
+}
+
+/* 统计卡片区域 */
+.training-stats {
+  margin-bottom: 24px;
+}
+
+.training-stats-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+}
+
+.training-stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.training-stats-card .stat-icon {
+  width: 48px;
+  height: 48px;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 24px;
+  margin-bottom: 16px;
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+  color: white;
+}
+
+.training-stats-card:nth-child(1) .stat-icon {
+  background: linear-gradient(135deg, #1890ff, #096dd9);
+}
+
+.training-stats-card:nth-child(2) .stat-icon {
+  background: linear-gradient(135deg, #52c41a, #389e0d);
+}
+
+.training-stats-card:nth-child(3) .stat-icon {
+  background: linear-gradient(135deg, #722ed1, #531dab);
+}
+
+.training-stats-card:nth-child(4) .stat-icon {
+  background: linear-gradient(135deg, #fa8c16, #d46b08);
+}
+
+.training-stats-card h3 {
+  margin: 0 0 8px 0;
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+}
+
+.training-stats-card .count {
+  font-size: 32px;
+  font-weight: 700;
+  color: #262626;
+  margin-bottom: 8px;
+}
+
+.training-stats-card .trend {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  color: #666;
+}
+
+.training-stats-card .trend.up {
+  color: #52c41a;
+}
+
+.training-stats-card .trend.down {
+  color: #ff4d4f;
+}
+
+/* 主要内容区域 */
+.training-content {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.training-content .ant-tabs-nav {
+  margin-bottom: 24px;
+}
+
+.training-content .ant-tabs-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+.training-content .ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+/* 标签页内容 */
+.tab-content {
+  padding: 0;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* 表格样式 */
+.tab-content .ant-table {
+  border-radius: 8px;
+}
+
+.tab-content .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.tab-content .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.tab-content .ant-table-tbody > tr > td {
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* 操作按钮样式 */
+.tab-content .action-buttons .ant-btn {
+  border-radius: 6px;
+  font-weight: 500;
+  transition: all 0.3s;
+}
+
+.tab-content .action-buttons .ant-btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+}
+
+/* 进度条样式 */
+.tab-content .ant-progress {
+  margin-bottom: 0;
+}
+
+.tab-content .ant-progress-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 评分样式 */
+.tab-content .ant-rate {
+  font-size: 12px;
+}
+
+/* 弹窗样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-modal .ant-form-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+.ant-modal .ant-input,
+.ant-modal .ant-select-selector {
+  border-radius: 8px;
+  border: 1px solid #d9d9d9;
+  transition: all 0.3s;
+}
+
+.ant-modal .ant-input:focus,
+.ant-modal .ant-select-selector:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 2px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .training-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .training-header .page-title {
+    font-size: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header > * {
+    width: 100%;
+  }
+
+  .training-stats {
+    margin-bottom: 16px;
+  }
+
+  .training-stats-card {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .training-header {
+    padding: 16px;
+  }
+
+  .training-header .page-title {
+    font-size: 18px;
+  }
+
+  .training-header .page-icon {
+    font-size: 24px;
+  }
+
+  .training-stats-card .count {
+    font-size: 24px;
+  }
+
+  .training-stats-card h3 {
+    font-size: 12px;
+  }
+
+  .training-stats-card .trend {
+    font-size: 11px;
+  }
+}
+
+/* 动画效果 */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.training-stats-card {
+  animation: fadeIn 0.5s ease-out;
+}
+
+.training-stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.training-stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.training-stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.training-stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+/* 自定义滚动条 */
+.tab-content ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.tab-content ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.tab-content ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.tab-content ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 搜索框样式 */
+.table-header .ant-input-search {
+  border-radius: 8px;
+}
+
+.table-header .ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.table-header .ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.table-header .ant-select {
+  border-radius: 8px;
+}
+
+.table-header .ant-select-selector {
+  border-radius: 8px !important;
+}
+
+/* 加载状态样式 */
+.tab-content .ant-table-placeholder {
+  border-radius: 8px;
+}
+
+.tab-content .ant-spin-nested-loading {
+  border-radius: 8px;
+}
+
+/* 表格行悬停效果 */
+.tab-content .ant-table-tbody > tr {
+  transition: all 0.3s;
+}
+
+.tab-content .ant-table-tbody > tr:hover {
+  background: #f0f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 按钮悬停效果 */
+.tab-content .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.tab-content .ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}

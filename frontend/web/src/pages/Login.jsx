@@ -1,22 +1,27 @@
 import React, { useState } from 'react';
 import { Form, Input, Button, Checkbox, message } from 'antd';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
-import { useHistory } from 'react-router-dom';
-import axios from 'axios';
+import { useNavigate } from 'react-router-dom';
+import api from '../services/api'; // 使用统一的API实例
 import './Login.css';
 
 const Login = () => {
   const [loading, setLoading] = useState(false);
-  const history = useHistory();
+  const navigate = useNavigate();
 
   const onFinish = async (values) => {
     setLoading(true);
     try {
-      const { username, password, remember } = values;
-      // 模拟登录请求
-      await new Promise(resolve => setTimeout(resolve, 1000));
-      message.success('登录成功');
-      history.push('/dashboard');
+      const response = await api.post('/auth/login', values);
+      if (response.data.code === 0) {
+        // 保存token到本地存储
+        localStorage.setItem('token', response.data.data.access_token);
+        message.success('登录成功');
+        // 跳转到仪表板
+        navigate('/dashboard');
+      } else {
+        message.error(response.data.message || '登录失败');
+      }
     } catch (error) {
       message.error('登录失败: ' + (error.response?.data?.message || error.message));
     } finally {

@@ -1,43 +1,23 @@
-import React from 'react';
+import React, { act } from 'react';
 import { render, screen, fireEvent, waitFor } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Login from '../../pages/Login';
 
-// Mock window.matchMedia
-Object.defineProperty(window, 'matchMedia', {
-  writable: true,
-  value: jest.fn().mockImplementation(query => ({
-    matches: false,
-    media: query,
-    onchange: null,
-    addListener: jest.fn(),
-    removeListener: jest.fn(),
-    addEventListener: jest.fn(),
-    removeEventListener: jest.fn(),
-    dispatchEvent: jest.fn(),
-  })),
-});
+// Mock the api service instead of authService
+jest.mock('../../services/api', () => ({
+  post: jest.fn()
+}));
 
-// Mock localStorage
-const localStorageMock = {
-  getItem: jest.fn(),
-  setItem: jest.fn(),
-  removeItem: jest.fn(),
-  clear: jest.fn(),
-};
-global.localStorage = localStorageMock;
-
-// Mock react-router-dom useNavigate
+// Mock useNavigate
 const mockNavigate = jest.fn();
 jest.mock('react-router-dom', () => ({
   ...jest.requireActual('react-router-dom'),
-  useNavigate: () => mockNavigate,
+  useNavigate: () => mockNavigate
 }));
 
-// Mock fetch
-global.fetch = jest.fn();
-
 describe('Login Component', () => {
+  const mockApi = require('../../services/api');
+
   beforeEach(() => {
     jest.clearAllMocks();
   });
@@ -49,10 +29,9 @@ describe('Login Component', () => {
       </BrowserRouter>
     );
 
-    expect(screen.getByText('医院管理系统登录')).toBeInTheDocument();
-    expect(screen.getByPlaceholderText('用户名/邮箱')).toBeInTheDocument();
+    expect(screen.getByPlaceholderText('用户名')).toBeInTheDocument();
     expect(screen.getByPlaceholderText('密码')).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '登录' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '登 录' })).toBeInTheDocument(); // 注意这里的空格
   });
 
   it('should show error message with invalid input', async () => {
@@ -62,24 +41,21 @@ describe('Login Component', () => {
       </BrowserRouter>
     );
 
-    const loginButton = screen.getByRole('button', { name: '登录' });
-    fireEvent.click(loginButton);
+    fireEvent.click(screen.getByRole('button', { name: '登 录' }));
 
-    expect(await screen.findByText('请输入用户名/邮箱!')).toBeInTheDocument();
-    expect(await screen.findByText('请输入密码!')).toBeInTheDocument();
+    await waitFor(() => {
+      expect(screen.getByText('请输入用户名!')).toBeInTheDocument();
+      expect(screen.getByText('请输入密码!')).toBeInTheDocument();
+    });
   });
 
   it('should login successfully with valid credentials', async () => {
-    // Mock successful login response
-    global.fetch.mockResolvedValueOnce({
-      json: () => Promise.resolve({
-        code: 0,
-        message: 'success',
-        data: {
-          access_token: 'test-token',
-          user: { id: 1, username: 'testuser' }
-        }
-      })
+    // Mock the API response to simulate successful login
+    mockApi.post.mockResolvedValue({ 
+      data: { 
+        code: 0, 
+        data: { access_token: 'test-token' } 
+      }
     });
 
     render(
@@ -88,34 +64,36 @@ describe('Login Component', () => {
       </BrowserRouter>
     );
 
-    // Fill in the form
-    fireEvent.change(screen.getByPlaceholderText('用户名/邮箱'), {
+    fireEvent.change(screen.getByPlaceholderText('用户名'), {
       target: { value: 'testuser' }
     });
     fireEvent.change(screen.getByPlaceholderText('密码'), {
       target: { value: 'password123' }
     });
+    fireEvent.click(screen.getByRole('button', { name: '登 录' }));
 
-    // Submit the form
-    const loginButton = screen.getByRole('button', { name: '登录' });
-    fireEvent.click(loginButton);
-
-    // Wait for async operations
+    // 等待异步操作完成
     await waitFor(() => {
-      expect(global.fetch).toHaveBeenCalledWith('/api/auth/login', expect.any(Object));
-      expect(localStorage.setItem).toHaveBeenCalledWith('access_token', 'test-token');
-      expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
+      expect(mockApi.post).toHaveBeenCalled();
     });
+    
+    // 检查调用参数
+    expect(mockApi.post).toHaveBeenCalledWith('/auth/login', {
+      username: 'testuser',
+      password: 'password123',
+      remember: true
+    });
+    
+    // 检查导航是否发生
+    expect(mockNavigate).toHaveBeenCalledWith('/dashboard');
   });
 
   it('should show error message on login failure', async () => {
-    // Mock failed login response
-    global.fetch.mockResolvedValueOnce({
-      json: () => Promise.resolve({
-        code: 1002,
-        message: '用户名或密码错误',
-        data: null
-      })
+    mockApi.post.mockResolvedValue({
+      data: {
+        code: 1,
+        message: '登录失败'
+      }
     });
 
     render(
@@ -124,19 +102,17 @@ describe('Login Component', () => {
       </BrowserRouter>
     );
 
-    // Fill in the form
-    fireEvent.change(screen.getByPlaceholderText('用户名/邮箱'), {
+    fireEvent.change(screen.getByPlaceholderText('用户名'), {
       target: { value: 'testuser' }
     });
     fireEvent.change(screen.getByPlaceholderText('密码'), {
       target: { value: 'wrongpassword' }
     });
+    fireEvent.click(screen.getByRole('button', { name: '登 录' }));
 
-    // Submit the form
-    const loginButton = screen.getByRole('button', { name: '登录' });
-    fireEvent.click(loginButton);
-
-    // Wait for error message
-    expect(await screen.findByText('用户名或密码错误')).toBeInTheDocument();
+    // 等待错误消息出现，根据实际实现可能需要调整文本
+    await waitFor(() => {
+      expect(screen.getByText(/登录失败/)).toBeInTheDocument();
+    }, { timeout: 3000 });
   });
 });

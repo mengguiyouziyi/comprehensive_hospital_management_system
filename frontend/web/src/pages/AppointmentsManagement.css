@@ -1,0 +1,711 @@
+/* 预约管理页面样式 */
+.appointments-management {
+  min-height: 100%;
+}
+
+/* 页面标题区域 */
+.appointments-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 24px;
+  padding: 24px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.appointments-header .page-title {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin: 0;
+  font-size: 24px;
+  font-weight: 600;
+  color: #262626;
+}
+
+.appointments-header .page-icon {
+  font-size: 28px;
+  color: #1890ff;
+}
+
+/* 统计卡片区域 */
+.appointments-stats {
+  margin-bottom: 24px;
+}
+
+.stats-card {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+  transition: all 0.3s;
+  border: 1px solid #f0f0f0;
+  text-align: center;
+}
+
+.stats-card:hover {
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+  transform: translateY(-2px);
+}
+
+.stats-card .ant-statistic-title {
+  font-size: 14px;
+  color: #666;
+  font-weight: 500;
+  margin-bottom: 8px;
+}
+
+.stats-card .ant-statistic-content {
+  font-size: 28px;
+  font-weight: 700;
+}
+
+/* 主要内容区域 */
+.appointments-content {
+  border-radius: 12px;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.tab-content {
+  padding: 16px 0;
+}
+
+.table-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  gap: 16px;
+}
+
+/* 表格样式 */
+.appointments-content .ant-table {
+  border-radius: 8px;
+}
+
+.appointments-content .ant-table-thead > tr > th {
+  background: #fafafa;
+  font-weight: 600;
+  color: #262626;
+  border-bottom: 2px solid #f0f0f0;
+}
+
+.appointments-content .ant-table-tbody > tr:hover > td {
+  background: #f0f9ff;
+}
+
+.appointments-content .ant-table-tbody > tr > td {
+  padding: 16px 12px;
+  vertical-align: middle;
+}
+
+/* 标签样式 */
+.ant-tag {
+  border-radius: 6px;
+  font-weight: 500;
+  padding: 4px 8px;
+  font-size: 12px;
+}
+
+.ant-tag-green {
+  background: #f6ffed;
+  border-color: #b7eb8f;
+  color: #52c41a;
+}
+
+.ant-tag-blue {
+  background: #f0f9ff;
+  border-color: #91d5ff;
+  color: #1890ff;
+}
+
+.ant-tag-red {
+  background: #fff2f0;
+  border-color: #ffccc7;
+  color: #ff4d4f;
+}
+
+.ant-tag-orange {
+  background: #fff7e6;
+  border-color: #ffd591;
+  color: #fa8c16;
+}
+
+/* 徽章样式 */
+.ant-badge-status-dot {
+  width: 8px;
+  height: 8px;
+}
+
+.ant-badge-status-text {
+  font-size: 12px;
+  font-weight: 500;
+}
+
+/* 弹窗样式 */
+.ant-modal .ant-modal-content {
+  border-radius: 12px;
+}
+
+.ant-modal .ant-modal-header {
+  border-radius: 12px 12px 0 0;
+  border-bottom: 1px solid #f0f0f0;
+}
+
+.ant-modal .ant-modal-body {
+  padding: 24px;
+}
+
+.ant-modal .ant-form-item {
+  margin-bottom: 16px;
+}
+
+.ant-modal .ant-form-item-label {
+  font-weight: 500;
+  color: #262626;
+}
+
+/* 记录详情样式 */
+.record-detail {
+  max-height: 600px;
+  overflow-y: auto;
+}
+
+.record-detail .ant-descriptions {
+  margin-bottom: 16px;
+}
+
+.record-detail .ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+/* 标签页样式 */
+.ant-tabs-tab {
+  padding: 12px 24px;
+  font-weight: 500;
+  border-radius: 8px 8px 0 0;
+}
+
+.ant-tabs-tab-active {
+  color: #1890ff;
+  font-weight: 600;
+}
+
+.ant-tabs-ink-bar {
+  background: #1890ff;
+}
+
+/* 搜索框样式 */
+.table-header .ant-input-search {
+  border-radius: 8px;
+}
+
+.table-header .ant-input-search .ant-input {
+  border-radius: 8px 0 0 8px;
+}
+
+.table-header .ant-input-search .ant-input-search-button {
+  border-radius: 0 8px 8px 0;
+}
+
+/* 选择器样式 */
+.table-header .ant-select {
+  border-radius: 8px;
+}
+
+.table-header .ant-select-selector {
+  border-radius: 8px !important;
+}
+
+/* 数字输入框样式 */
+.ant-input-number {
+  border-radius: 8px;
+}
+
+.ant-input-number:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 日期选择器样式 */
+.ant-picker {
+  border-radius: 8px;
+}
+
+.ant-picker:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 时间选择器样式 */
+.ant-time-picker {
+  border-radius: 8px;
+}
+
+.ant-time-picker:focus {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 进度条样式 */
+.ant-progress {
+  border-radius: 8px;
+}
+
+.ant-progress-bg {
+  border-radius: 8px;
+}
+
+/* 描述列表样式 */
+.ant-descriptions-bordered .ant-descriptions-view {
+  border-radius: 8px;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-label {
+  background: #fafafa;
+  font-weight: 500;
+}
+
+.ant-descriptions-bordered .ant-descriptions-item-content {
+  border-color: #f0f0f0;
+}
+
+/* 警告提示样式 */
+.ant-alert {
+  border-radius: 8px;
+  margin-bottom: 16px;
+}
+
+.ant-alert-info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+}
+
+.ant-alert-warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+}
+
+.ant-alert-success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+}
+
+.ant-alert-error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+}
+
+/* 预约状态样式 */
+.status-confirmed {
+  color: #52c41a;
+}
+
+.status-pending {
+  color: #fa8c16;
+}
+
+.status-completed {
+  color: #1890ff;
+}
+
+.status-cancelled {
+  color: #ff4d4f;
+}
+
+/* 预约类型样式 */
+.type-outpatient {
+  color: #1890ff;
+}
+
+.type-followup {
+  color: #52c41a;
+}
+
+.type-emergency {
+  color: #ff4d4f;
+}
+
+.type-initial {
+  color: #fa8c16;
+}
+
+/* 优先级样式 */
+.priority-emergency {
+  color: #ff4d4f;
+  font-weight: bold;
+}
+
+.priority-important {
+  color: #fa8c16;
+}
+
+.priority-normal {
+  color: #52c41a;
+}
+
+/* 响应式设计 */
+@media (max-width: 768px) {
+  .appointments-header {
+    flex-direction: column;
+    gap: 16px;
+    align-items: stretch;
+  }
+
+  .appointments-header .page-title {
+    font-size: 20px;
+  }
+
+  .table-header {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .table-header > * {
+    width: 100%;
+  }
+
+  .appointments-stats {
+    margin-bottom: 16px;
+  }
+
+  .stats-card {
+    margin-bottom: 16px;
+  }
+}
+
+@media (max-width: 480px) {
+  .appointments-header {
+    padding: 16px;
+  }
+
+  .appointments-header .page-title {
+    font-size: 18px;
+  }
+
+  .appointments-header .page-icon {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-content {
+    font-size: 24px;
+  }
+
+  .stats-card .ant-statistic-title {
+    font-size: 12px;
+  }
+}
+
+/* 动画效果 */
+@keyframes slideIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.stats-card {
+  animation: slideIn 0.5s ease-out;
+}
+
+.stats-card:nth-child(1) {
+  animation-delay: 0.1s;
+}
+
+.stats-card:nth-child(2) {
+  animation-delay: 0.2s;
+}
+
+.stats-card:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+.stats-card:nth-child(4) {
+  animation-delay: 0.4s;
+}
+
+.stats-card:nth-child(5) {
+  animation-delay: 0.5s;
+}
+
+.stats-card:nth-child(6) {
+  animation-delay: 0.6s;
+}
+
+/* 自定义滚动条 */
+.record-detail::-webkit-scrollbar,
+.appointments-content ::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+
+.record-detail::-webkit-scrollbar-track,
+.appointments-content ::-webkit-scrollbar-track {
+  background: #f0f0f0;
+  border-radius: 3px;
+}
+
+.record-detail::-webkit-scrollbar-thumb,
+.appointments-content ::-webkit-scrollbar-thumb {
+  background: #d9d9d9;
+  border-radius: 3px;
+}
+
+.record-detail::-webkit-scrollbar-thumb:hover,
+.appointments-content ::-webkit-scrollbar-thumb:hover {
+  background: #bfbfbf;
+}
+
+/* 焦点状态样式 */
+.ant-input:focus,
+.ant-input-number:focus,
+.ant-picker:focus,
+.ant-select-focused .ant-select-selector {
+  border-color: #1890ff;
+  box-shadow: 0 0 0 2px rgba(24, 144, 255, 0.2);
+}
+
+/* 禁用状态样式 */
+.ant-input:disabled,
+.ant-input-number:disabled,
+.ant-picker:disabled,
+.ant-select-disabled .ant-select-selector {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+/* 只读状态样式 */
+.ant-input[readonly],
+.ant-input-number[readonly] {
+  background: #fafafa;
+  color: #666;
+  cursor: default;
+}
+
+/* 按钮悬停效果 */
+.appointments-content .ant-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.appointments-content .ant-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+/* 表格行悬停效果 */
+.appointments-content .ant-table-tbody > tr {
+  transition: all 0.3s;
+}
+
+.appointments-content .ant-table-tbody > tr:hover {
+  background: #f0f9ff;
+  transform: scale(1.01);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* 紧急预约高亮 */
+.emergency-row {
+  background: #fff2f0 !important;
+}
+
+.emergency-row:hover {
+  background: #ffece8 !important;
+}
+
+/* 高亮状态样式 */
+.highlight {
+  background: #fff7e6;
+  border: 1px solid #ffd591;
+  color: #fa8c16;
+}
+
+/* 成功状态样式 */
+.success {
+  background: #f6ffed;
+  border: 1px solid #b7eb8f;
+  color: #52c41a;
+}
+
+/* 错误状态样式 */
+.error {
+  background: #fff2f0;
+  border: 1px solid #ffccc7;
+  color: #ff4d4f;
+}
+
+/* 警告状态样式 */
+.warning {
+  background: #fffbe6;
+  border: 1px solid #ffe58f;
+  color: #fa8c16;
+}
+
+/* 信息状态样式 */
+.info {
+  background: #e6f7ff;
+  border: 1px solid #91d5ff;
+  color: #1890ff;
+}
+
+/* 预约时间选择器样式 */
+.appointment-time-picker {
+  width: 100%;
+}
+
+/* 医生卡片样式 */
+.doctor-card {
+  border: 1px solid #f0f0f0;
+  border-radius: 8px;
+  padding: 16px;
+  margin-bottom: 16px;
+  transition: all 0.3s;
+}
+
+.doctor-card:hover {
+  border-color: #1890ff;
+  box-shadow: 0 4px 12px rgba(24, 144, 255, 0.1);
+}
+
+.doctor-card.doctor-available {
+  border-color: #52c41a;
+}
+
+.doctor-card.doctor-full {
+  border-color: #ff4d4f;
+}
+
+/* 时间段选择样式 */
+.time-slot {
+  display: inline-block;
+  padding: 8px 16px;
+  margin: 4px;
+  border: 1px solid #d9d9d9;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.time-slot:hover {
+  border-color: #1890ff;
+  color: #1890ff;
+}
+
+.time-slot.selected {
+  background: #1890ff;
+  color: white;
+  border-color: #1890ff;
+}
+
+.time-slot.disabled {
+  background: #f5f5f5;
+  color: #999;
+  cursor: not-allowed;
+}
+
+.time-slot.disabled:hover {
+  border-color: #d9d9d9;
+  color: #999;
+}
+
+/* 预约状态指示器 */
+.status-indicator {
+  display: inline-block;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  margin-right: 4px;
+}
+
+.status-indicator.confirmed {
+  background: #52c41a;
+}
+
+.status-indicator.pending {
+  background: #fa8c16;
+}
+
+.status-indicator.completed {
+  background: #1890ff;
+}
+
+.status-indicator.cancelled {
+  background: #ff4d4f;
+}
+
+/* 搜索高亮 */
+.search-highlight {
+  background: #fffbe6;
+  padding: 2px 4px;
+  border-radius: 2px;
+}
+
+/* 空状态样式 */
+.ant-empty {
+  padding: 40px 0;
+}
+
+.ant-empty-image {
+  height: 100px;
+}
+
+/* 加载状态样式 */
+.loading-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(255, 255, 255, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  border-radius: 8px;
+}
+
+/* 响应式表格 */
+@media (max-width: 576px) {
+  .appointments-content .ant-table {
+    font-size: 12px;
+  }
+  
+  .appointments-content .ant-table-thead > tr > th {
+    padding: 8px 4px;
+  }
+  
+  .appointments-content .ant-table-tbody > tr > td {
+    padding: 8px 4px;
+  }
+  
+  .ant-btn-sm {
+    padding: 0 8px;
+    font-size: 12px;
+  }
+}
+
+/* 打印样式 */
+@media print {
+  .appointments-header,
+  .appointments-stats,
+  .table-header,
+  .ant-tabs-nav,
+  .ant-btn {
+    display: none !important;
+  }
+  
+  .appointments-content {
+    box-shadow: none !important;
+    border: none !important;
+  }
+  
+  .ant-table {
+    border: 1px solid #ddd !important;
+  }
+}
