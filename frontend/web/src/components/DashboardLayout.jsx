@@ -149,6 +149,8 @@ const DashboardLayout = ({ children }) => {
       '/repair-orders': { title: '维修工单', icon: <ToolOutlined /> },
       '/preventive-maintenance': { title: '预防性维护', icon: <ScheduleOutlined /> },
       '/usage-records': { title: '使用记录', icon: <FileTextOutlined /> },
+      '/certification': { title: '资质认证', icon: <FileProtectOutlined /> },
+      '/performance': { title: '绩效评估', icon: <BarChartOutlined /> },
       '/profile': { title: '个人信息', icon: <UserOutlined /> },
       '/settings': { title: '系统设置', icon: <SettingOutlined /> },
     };
