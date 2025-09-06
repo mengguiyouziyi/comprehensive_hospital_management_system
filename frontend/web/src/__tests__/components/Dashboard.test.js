@@ -2,7 +2,7 @@ import React from 'react';
 import { render, screen, fireEvent, waitFor, act } from '@testing-library/react';
 import { BrowserRouter } from 'react-router-dom';
 import Dashboard from '../../pages/Dashboard';
-import { mockApi, mockStatistics } from '../../__tests__/mockData';
+import { mockApi, mockStatistics } from '../../data/mockData';
 
 // Mock useNavigate
 const mockNavigate = jest.fn();
@@ -12,7 +12,7 @@ jest.mock('react-router-dom', () => ({
 }));
 
 // Mock the mockData module
-jest.mock('../../__tests__/mockData', () => ({
+jest.mock('../../data/mockData', () => ({
   mockApi: {
     getStatistics: jest.fn()
   },

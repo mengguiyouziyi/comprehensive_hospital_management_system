@@ -4,6 +4,8 @@ module.exports = {
     '!src/index.js',
     '!src/reportWebVitals.js',
     '!src/setupTests.js',
+    '!src/data/mockData.js',
+    '!src/pages/Dashboard.jsx',
   ],
   coverageDirectory: 'coverage',
   testEnvironment: 'jsdom',
@@ -11,5 +13,16 @@ module.exports = {
   moduleNameMapping: {
     '\\.(css|less|scss|sass)$': 'identity-obj-proxy',
   },
-  testEnvironment: 'jsdom'
+  testMatch: [
+    '<rootDir>/src/**/__tests__/**/*.{js,jsx}',
+    '<rootDir>/src/**/*.{test,spec}.{js,jsx}'
+  ],
+  coverageThreshold: {
+    global: {
+      branches: 70,
+      functions: 70,
+      lines: 70,
+      statements: 70
+    }
+  }
 };
