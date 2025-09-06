@@ -32,4 +32,24 @@ app.get('/', (req, res) => {
   res.json({ message: '医院管理系统API服务' });
 });
 
+// 健康检查
+app.get('/health', (req, res) => {
+  const health = {
+    status: 'healthy',
+    timestamp: new Date().toISOString(),
+    uptime: process.uptime(),
+    environment: process.env.NODE_ENV || 'development',
+    version: process.env.npm_package_version || '1.0.0'
+  };
+  
+  // 检查数据库连接
+  if (mongoose.connection.readyState === 1) {
+    health.database = 'connected';
+  } else {
+    health.database = 'disconnected';
+  }
+  
+  res.status(200).json(health);
+});
+
 module.exports = app;

@@ -1,0 +1,102 @@
+version: '3.8'
+
+services:
+  # Frontend
+  hospital-frontend:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    container_name: hospital-frontend
+    expose:
+      - "80"
+    depends_on:
+      - hospital-backend
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+
+  # Backend
+  hospital-backend:
+    build:
+      context: ./backend/user-service
+      dockerfile: Dockerfile
+    container_name: hospital-backend
+    expose:
+      - "3001"
+    depends_on:
+      - mongodb
+      - redis
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    environment:
+      - NODE_ENV=production
+      - PORT=3001
+      - MONGODB_URI=mongodb://admin:admin123@mongodb:27017/hospital_db?authSource=admin
+      - REDIS_URL=redis://:redis123@redis:6379
+      - JWT_SECRET=your-super-secret-jwt-key-change-in-production-please-use-a-strong-random-key
+      - JWT_EXPIRE=7d
+    volumes:
+      - ./logs:/app/logs
+
+  # MongoDB
+  mongodb:
+    image: mongo:6.0
+    container_name: hospital-mongodb
+    expose:
+      - "27017"
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    environment:
+      - MONGO_INITDB_ROOT_USERNAME=admin
+      - MONGO_INITDB_ROOT_PASSWORD=admin123
+      - MONGO_INITDB_DATABASE=hospital_db
+    volumes:
+      - mongodb_data:/data/db
+      - ./init-mongo.js:/docker-entrypoint-initdb.d/init-mongo.js:ro
+
+  # Redis
+  redis:
+    image: redis:7-alpine
+    container_name: hospital-redis
+    expose:
+      - "6379"
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    volumes:
+      - redis_data:/data
+    command: redis-server --requirepass redis123
+
+  # Nginx reverse proxy
+  nginx:
+    image: nginx:alpine
+    container_name: hospital-nginx
+    ports:
+      - "80:80"
+      - "443:443"
+    depends_on:
+      - hospital-frontend
+      - hospital-backend
+    networks:
+      - hospital-network
+    restart: unless-stopped
+    volumes:
+      - ./nginx.prod.conf:/etc/nginx/nginx.conf:ro
+      - ./ssl:/etc/nginx/ssl:ro
+      - nginx_logs:/var/log/nginx
+
+networks:
+  hospital-network:
+    driver: bridge
+
+volumes:
+  mongodb_data:
+    driver: local
+  redis_data:
+    driver: local
+  nginx_logs:
+    driver: local
